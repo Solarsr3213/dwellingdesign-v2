@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dwelling Design | Architectural Design & Construction</title>
+<meta name="description" content="Dwelling Design – 25+ years of architectural design and construction excellence in Idaho.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
+<!-- Hidden image preload pool -->
+<div style="display:none" aria-hidden="true">
+  <img id="hero_a" src="images/hb-1-front-exterior.jpg">
+  <img id="hero_b" src="images/hendrickson-1.jpg">
+  <img id="hero_c" src="images/wmr3.jpg">
+  <img id="hero_d" src="images/wd0.jpg">
+  <img id="hero_e" src="images/lakeview-new-2.jpg">
+  <img id="mikePhoto" src="images/mike.jpg">
+  <img id="navLogo" src="images/logo-white.png">
+  <!-- WMR -->
+  <img id="pimg_wmr0" src="images/wmr0.jpg"><img id="pimg_wmr1" src="images/wmr1.jpg"><img id="pimg_wmr2" src="images/wmr2.jpg"><img id="pimg_wmr3" src="images/wmr3.jpg"><img id="pimg_wmr4" src="images/wmr4.jpg"><img id="pimg_wmr5" src="images/wmr5.jpg"><img id="pimg_wmr6" src="images/wmr6.jpg"><img id="pimg_wmr7" src="images/wmr7.jpg"><img id="pimg_wmr8" src="images/wmr8.jpg"><img id="pimg_wmr9" src="images/wmr9.jpg"><img id="pimg_wmr10" src="images/wmr10.jpg"><img id="pimg_wmr11" src="images/wmr11.jpg"><img id="pimg_wmr12" src="images/wmr12.jpg"><img id="pimg_wmr13" src="images/wmr13.jpg"><img id="pimg_wmr14" src="images/wmr14.jpg"><img id="pimg_wmr15" src="images/wmr15.jpg"><img id="pimg_wmr16" src="images/wmr16.jpg"><img id="pimg_wmr17" src="images/wmr17.jpg">
+  <!-- WD -->
+  <img id="pimg_wd0" src="images/wd0.jpg"><img id="pimg_wd1" src="images/wd1.jpg"><img id="pimg_wd_1" src="images/wd-1-patio.jpg"><img id="pimg_wd_2" src="images/wd-2-shower.jpg"><img id="pimg_wd_3" src="images/wd-3-vanity-top.jpg"><img id="pimg_wd_4" src="images/wd-4-great-room.jpg"><img id="pimg_wd_5" src="images/wd-5-dining-set.jpg"><img id="pimg_wd_6" src="images/wd-6-door-bathtub.jpg"><img id="pimg_wd_7" src="images/wd-7-living-zoom.jpg"><img id="pimg_wd_8" src="images/wd-8-double-vanity.jpg">
+  <!-- Terra Nativa -->
+  <img id="pimg_ref_h001" src="images/ref-h001.jpg"><img id="pimg_ref_h011" src="images/ref-h011.jpg"><img id="pimg_ref_lakeview" src="images/ref-lakeview.jpg"><img id="pimg_tn3" src="images/tn3.jpg"><img id="pimg_tn4" src="images/tn4.jpg"><img id="pimg_tn5" src="images/tn5.jpg"><img id="pimg_tn6" src="images/tn6.jpg"><img id="pimg_tn7" src="images/tn7.jpg">
+  <!-- Laguna Point -->
+  <img id="pimg_hr0" src="images/hr0.jpg"><img id="pimg_lp0" src="images/lp0.jpg"><img id="pimg_lp1" src="images/lp1.jpg"><img id="pimg_lp2" src="images/lp2.jpg"><img id="pimg_lp3" src="images/lp3.jpg">
+  <!-- Lakeview -->
+  <img id="pimg_lakeview_new1" src="images/lakeview-new-1.jpg"><img id="pimg_lakeview_new2" src="images/lakeview-new-2.jpg"><img id="pimg_lakeview_new3" src="images/lakeview-new-3.jpg"><img id="pimg_lakeview_new4" src="images/lakeview-new-4.jpg"><img id="pimg_lakeview_new5" src="images/lakeview-new-5.jpg">
+  <!-- Hackberry -->
+  <img id="pimg_hb_1" src="images/hb-1-front-exterior.jpg"><img id="pimg_hb_2" src="images/hb-2-tv-cabinet.jpg"><img id="pimg_hb_3" src="images/hb-3-wine-kitchen-bath.jpg"><img id="pimg_hb_4" src="images/hb-4-living-room.jpg"><img id="pimg_hb_5" src="images/hb-5-kitchen-island.jpg"><img id="pimg_hb_6" src="images/hb-6-bathroom.jpg"><img id="pimg_hb_7" src="images/hb-7-staircase.jpg"><img id="pimg_hb_8" src="images/hb-8-exterior-side.jpg"><img id="pimg_hb_9" src="images/hb-9-exterior-back.jpg"><img id="pimg_hb_10" src="images/hb-10-exterior-back2.jpg"><img id="pimg_hb_11" src="images/hb-10-exterior-back2.jpg">
+  <!-- Hendrickson -->
+  <img id="pimg_hend1" src="images/hendrickson-1.jpg"><img id="pimg_hend2" src="images/hendrickson-2.jpg"><img id="pimg_hend3" src="images/hendrickson-3.jpg"><img id="pimg_hend4" src="images/hendrickson-4.jpg"><img id="pimg_hend5" src="images/hendrickson-5.jpg"><img id="pimg_hend6" src="images/hendrickson-6.jpg"><img id="pimg_hend7" src="images/hendrickson-7.jpg"><img id="pimg_hend8" src="images/hendrickson-8.jpg">
+  <!-- Renderings -->
+  <img id="pimg_rend_new1" src="images/rendering-new-1.jpg"><img id="pimg_rend_new2" src="images/rendering-new-1.jpg">
+  <img id="pimg_rnd_1" src="images/rnd-1-mediterranean.jpg"><img id="pimg_rnd_2" src="images/rnd-2-waterpark.jpg"><img id="pimg_rnd_3" src="images/rnd-3-lodge-sketch.jpg"><img id="pimg_rnd_4" src="images/rnd-4-craftsman.jpg"><img id="pimg_rnd_5" src="images/rnd-5-timber-render.jpg"><img id="pimg_rnd_6" src="images/rnd-6-modern-cliff.jpg"><img id="pimg_rnd_7" src="images/rnd-7-contemporary1.jpg"><img id="pimg_rnd_8" src="images/rnd-8-contemporary2.jpg"><img id="pimg_rnd_9" src="images/rnd-9-mountain-hot-tub.jpg"><img id="pimg_rnd_10" src="images/rnd-10-dusk-retreat.jpg"><img id="pimg_rnd_11" src="images/rnd-11-mountain-deck.jpg"><img id="pimg_rnd_12" src="images/rnd-12-aerial-home.jpg"><img id="pimg_rnd_13" src="images/rnd-13-glass-a-frame.jpg"><img id="pimg_rnd_14" src="images/rnd-14-great-room.jpg"><img id="pimg_rnd_15" src="images/rnd-15-long-home.jpg">
+  <img id="pimg_interior" src="images/interior.jpg"><img id="pimg_staircase" src="images/staircase.jpg">
+  <img id="pimg_tuttle" src="images/tuttle.jpg"><img id="pimg_lot30" src="images/lot30.jpg"><img id="pimg_dwelling7" src="images/dwelling7.jpg"><img id="pimg_dwelling9" src="images/dwelling9.jpg"><img id="pimg_kalisek" src="images/kalisek-render.jpg"><img id="pimg_bungalow" src="images/bungalow.jpg"><img id="pimg_nelson" src="images/nelson.jpg"><img id="pimg_stark" src="images/stark.jpg">
+</div>
+
+<style>
+:root {
+  --navy: #111827;
+  --navy-light: #1e2d42;
+  --orange: #E07428;
+  --orange-light: #f08840;
+  --cream: #f5f0e8;
+  --cream-light: #faf8f4;
+  --text: #1a1a2e;
+  --glass: rgba(255,255,255,0.05);
+  --glass-border: rgba(255,255,255,0.1);
+  --spring: cubic-bezier(0.34,1.56,0.64,1);
+  --ease: cubic-bezier(0.4,0,0.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+body{font-family:'Outfit',sans-serif;background:var(--navy);color:#fff;overflow-x:hidden;cursor:none}
+
+/* CURSOR */
+#cur-o{position:fixed;top:0;left:0;pointer-events:none;z-index:99999;width:40px;height:40px;border:1px solid var(--orange);border-radius:50%;transform:translate(-50%,-50%);transition:width .3s var(--spring),height .3s var(--spring),background .3s}
+#cur-i{position:fixed;top:0;left:0;pointer-events:none;z-index:99999;width:6px;height:6px;background:var(--orange);border-radius:50%;transform:translate(-50%,-50%)}
+body.cur-hover #cur-o{width:60px;height:60px;background:rgba(224,116,40,.08)}
+
+/* PRELOADER */
+#preloader{position:fixed;inset:0;z-index:99990;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s}
+#preloader.gone{opacity:0;visibility:hidden;pointer-events:none}
+#pl-svg path{stroke:var(--orange);fill:none;stroke-width:1.5;stroke-dasharray:400;stroke-dashoffset:400;animation:draw 1.6s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+#pl-bar{width:200px;height:1px;background:rgba(255,255,255,.1);margin-top:20px;position:relative;overflow:hidden}
+#pl-bar::after{content:'';position:absolute;inset:0;background:var(--orange);animation:fill 1.8s ease forwards;transform:scaleX(0);transform-origin:left}
+@keyframes fill{to{transform:scaleX(1)}}
+#pl-txt{font-size:11px;letter-spacing:.3em;color:var(--orange);margin-top:14px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:22px 48px;display:flex;align-items:center;justify-content:space-between;transition:all .4s}
+nav.sc{background:rgba(17,24,39,.9);backdrop-filter:blur(20px);padding:14px 48px;border-bottom:1px solid var(--glass-border)}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo img{height:38px;filter:brightness(0) invert(1)}
+.nav-logo span{font-family:'Cormorant Garant',serif;font-size:1.25rem;font-weight:600;color:#fff;letter-spacing:.05em}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.75rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;transition:color .3s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--orange);transition:width .3s}
+.nav-links a:hover{color:#fff}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--orange);color:#fff;border:none;padding:11px 26px;font-family:'Outfit',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;cursor:none;transition:background .3s,transform .2s var(--spring)}
+.nav-cta:hover{background:var(--orange-light);transform:scale(1.04)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:none;background:none;border:none;padding:4px}
+.burger span{display:block;width:24px;height:1px;background:#fff;transition:transform .3s,opacity .3s}
+
+/* HERO */
+#hero{position:relative;height:100vh;min-height:680px;display:flex;align-items:center;overflow:hidden}
+#three-canvas{position:absolute;inset:0;z-index:0;width:100%;height:100%}
+.hero-slides{position:absolute;inset:0;z-index:1}
+.hs{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.4s ease}
+.hs.on{opacity:1}
+.hero-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(135deg,rgba(17,24,39,.88) 0%,rgba(17,24,39,.45) 55%,rgba(17,24,39,.18) 100%)}
+#ptcl{position:absolute;inset:0;z-index:3;width:100%;height:100%;pointer-events:none}
+.hc{position:relative;z-index:4;max-width:1400px;margin:0 auto;padding:0 48px;width:100%}
+.h-tag{display:inline-flex;align-items:center;gap:10px;font-size:.68rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--orange);margin-bottom:28px;opacity:0;transform:translateY(20px)}
+.h-tag::before{content:'';width:30px;height:1px;background:var(--orange)}
+.h-h1{font-family:'Cormorant Garant',serif;font-size:clamp(3.5rem,7vw,7rem);font-weight:300;line-height:1.05;letter-spacing:-.02em;color:#fff;margin-bottom:28px;opacity:0;transform:translateY(40px)}
+.h-h1 em{font-style:italic;color:var(--orange)}
+.h-sub{font-size:clamp(.9rem,1.4vw,1.05rem);font-weight:300;color:rgba(255,255,255,.7);max-width:500px;line-height:1.85;opacity:0;transform:translateY(30px);margin-bottom:44px}
+.h-acts{display:flex;gap:18px;flex-wrap:wrap;opacity:0;transform:translateY(30px)}
+.h-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);opacity:0}
+.h-scroll-line{width:1px;height:44px;background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent);animation:sl 2s ease-in-out infinite}
+@keyframes sl{0%,100%{opacity:1}50%{opacity:.2}}
+.sdots{position:absolute;bottom:36px;right:48px;z-index:4;display:flex;gap:8px}
+.sdot{width:20px;height:2px;background:rgba(255,255,255,.3);border:none;cursor:none;transition:width .3s,background .3s}
+.sdot.on{width:36px;background:var(--orange)}
+
+/* MARQUEE */
+.marquee{background:var(--orange);padding:14px 0;overflow:hidden;display:flex;white-space:nowrap}
+.m-inner{display:flex;animation:mq 22s linear infinite}
+.m-inner span{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#fff;padding:0 28px}
+.m-inner span.sep{opacity:.35}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* BUTTONS */
+.btn-p{display:inline-flex;align-items:center;gap:12px;background:var(--orange);color:#fff;padding:15px 34px;font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:none;cursor:none;transition:background .3s,transform .3s var(--spring),box-shadow .3s;position:relative;overflow:hidden}
+.btn-p::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.15);transform:translateX(-101%);transition:transform .4s}
+.btn-p:hover::before{transform:translateX(0)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(224,116,40,.4)}
+.btn-o{display:inline-flex;align-items:center;gap:10px;background:transparent;color:rgba(255,255,255,.85);padding:14px 32px;font-size:.75rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,.3);cursor:none;transition:border-color .3s,color .3s,transform .3s var(--spring)}
+.btn-o:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-2px)}
+
+/* SECTIONS */
+.section-label{display:inline-flex;align-items:center;gap:12px;font-size:.62rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--orange);margin-bottom:20px}
+.section-label::before{content:'';width:22px;height:1px;background:var(--orange)}
+.section-title{font-family:'Cormorant Garant',serif;font-size:clamp(2.2rem,4vw,3.6rem);font-weight:300;line-height:1.15;color:#fff;margin-bottom:20px}
+.section-title.dk{color:var(--text)}
+
+/* ABOUT */
+#about{background:var(--cream-light)}
+.about-in{max-width:1400px;margin:0 auto;padding:110px 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.aimg{position:relative}
+.aimg-frame{position:relative;overflow:hidden}
+.aimg-frame img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transform:scale(1.05);transition:transform .8s}
+.aimg-frame:hover img{transform:scale(1)}
+.aimg-acc{position:absolute;bottom:-22px;right:-22px;width:140px;height:140px;border:2px solid var(--orange);z-index:-1}
+.aimg-stat{position:absolute;bottom:28px;left:-28px;background:var(--navy);color:#fff;padding:18px 22px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.aimg-stat .n{font-family:'Cormorant Garant',serif;font-size:2.4rem;font-weight:300;color:var(--orange);line-height:1}
+.aimg-stat .l{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:4px}
+.a-desc{font-size:.95rem;line-height:1.9;color:#4b5563;font-weight:300;margin-bottom:16px}
+.creds{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
+.cred{background:var(--navy);color:rgba(255,255,255,.75);padding:7px 14px;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
+
+/* WHY */
+#why{background:var(--navy);padding:110px 48px}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:60px}
+.why-card{background:var(--glass);border:1px solid var(--glass-border);padding:44px 28px;position:relative;overflow:hidden;transition:background .4s,transform .4s var(--spring);backdrop-filter:blur(10px)}
+.why-card::before{content:'';position:absolute;bottom:0;left:0;width:100%;height:3px;background:var(--orange);transform:scaleX(0);transition:transform .4s;transform-origin:left}
+.why-card:hover{background:rgba(255,255,255,.07);transform:translateY(-4px)}
+.why-card:hover::before{transform:scaleX(1)}
+.why-num{font-family:'Cormorant Garant',serif;font-size:3.5rem;font-weight:300;color:rgba(255,255,255,.05);position:absolute;top:16px;right:20px;line-height:1}
+.why-icon{width:44px;height:44px;margin-bottom:20px}
+.why-icon svg{width:100%;height:100%;stroke:var(--orange);fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
+.why-title{font-family:'Cormorant Garant',serif;font-size:1.35rem;font-weight:500;color:#fff;margin-bottom:14px}
+.why-desc{font-size:.85rem;line-height:1.8;color:rgba(255,255,255,.5);font-weight:300}
+
+/* SERVICES */
+#services{background:var(--cream-light);padding:110px 48px}
+.svc-grid{max-width:1400px;margin:56px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sc{background:#fff;padding:44px 32px;border:1px solid rgba(0,0,0,.06);position:relative;overflow:hidden;transition:transform .4s var(--spring),box-shadow .4s,border-color .3s;cursor:none}
+.sc::after{content:'';position:absolute;inset:0;background:var(--navy);transform:scaleY(0);transform-origin:bottom;transition:transform .4s var(--ease);z-index:0}
+.sc:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,.12);border-color:var(--orange)}
+.sc:hover::after{transform:scaleY(1)}
+.sc:hover .sc-name,.sc:hover .sc-desc{color:rgba(255,255,255,.88)}
+.sc:hover .sc-n{color:rgba(255,255,255,.08)}
+.sc:hover .sc-ico svg{stroke:var(--orange)}
+.sc-n{position:relative;z-index:1;font-family:'Cormorant Garant',serif;font-size:3.2rem;font-weight:300;color:rgba(0,0,0,.06);line-height:1;margin-bottom:20px;transition:color .4s}
+.sc-ico{position:relative;z-index:1;width:38px;height:38px;margin-bottom:18px}
+.sc-ico svg{width:100%;height:100%;stroke:var(--navy);fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;transition:stroke .4s}
+.sc-name{position:relative;z-index:1;font-family:'Cormorant Garant',serif;font-size:1.28rem;font-weight:500;color:var(--text);margin-bottom:10px;transition:color .4s}
+.sc-desc{position:relative;z-index:1;font-size:.83rem;line-height:1.75;color:#6b7280;font-weight:300;transition:color .4s}
+
+/* STATS */
+.stats{background:var(--navy-light);padding:72px 48px;border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border)}
+.stats-in{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.si{text-align:center;padding:36px 20px;border-right:1px solid var(--glass-border)}
+.si:last-child{border-right:none}
+.si-n{font-family:'Cormorant Garant',serif;font-size:3.8rem;font-weight:300;color:var(--orange);line-height:1}
+.si-l{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:10px}
+
+/* PORTFOLIO */
+#portfolio{background:var(--navy);padding:110px 0}
+.port-hdr{max-width:1400px;margin:0 auto 0;padding:0 48px;display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:0}
+.ftabs{display:flex;gap:4px}
+.ft{background:transparent;border:1px solid var(--glass-border);color:rgba(255,255,255,.5);padding:10px 20px;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;cursor:none;transition:all .3s;font-family:'Outfit',sans-serif}
+.ft.on{background:var(--orange);border-color:var(--orange);color:#fff}
+.ft:hover:not(.on){border-color:var(--orange);color:rgba(255,255,255,.85)}
+.port-grid{max-width:1400px;margin:44px auto 0;padding:0 48px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pc{position:relative;overflow:hidden;cursor:none;background:var(--navy-light);transition:box-shadow .4s;transform-style:preserve-3d}
+.pc.tall{grid-row:span 2}
+.pc-img{width:100%;height:100%;min-height:300px;object-fit:cover;display:block;transition:transform .7s var(--ease),filter .4s}
+.pc.tall .pc-img{min-height:380px}
+.pc-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(17,24,39,.95) 0%,rgba(17,24,39,.3) 50%,transparent 100%);opacity:0;transition:opacity .4s;display:flex;flex-direction:column;justify-content:flex-end;padding:28px}
+.pc:hover .pc-img{transform:scale(1.06);filter:brightness(.82)}
+.pc:hover .pc-ov{opacity:1}
+.pc:hover{box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.pc-tag{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
+.pc-name{font-family:'Cormorant Garant',serif;font-size:1.4rem;font-weight:400;color:#fff;margin-bottom:4px}
+.pc-loc{font-size:.72rem;color:rgba(255,255,255,.45);margin-bottom:18px}
+.pc-btn{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);background:none;border:1px solid var(--orange);padding:8px 16px;cursor:none;transition:background .3s,color .3s;font-family:'Outfit',sans-serif}
+.pc-btn:hover{background:var(--orange);color:#fff}
+.pc-num{position:absolute;top:14px;right:14px;font-family:'Cormorant Garant',serif;font-size:.75rem;color:rgba(255,255,255,.35);background:rgba(17,24,39,.6);padding:3px 9px;backdrop-filter:blur(8px)}
+
+/* GALLERY MODAL */
+#gm{position:fixed;inset:0;z-index:9000;display:none;background:rgba(0,0,0,.97);backdrop-filter:blur(20px);flex-direction:column}
+#gm.open{display:flex}
+.gm-hdr{display:flex;align-items:center;justify-content:space-between;padding:22px 36px;border-bottom:1px solid var(--glass-border)}
+.gm-proj{font-family:'Cormorant Garant',serif;font-size:1.7rem;font-weight:300;color:#fff}
+.gm-loc{font-size:.72rem;color:rgba(255,255,255,.38);margin-top:3px;letter-spacing:.1em}
+.gm-x{background:none;border:1px solid var(--glass-border);color:rgba(255,255,255,.55);width:42px;height:42px;font-size:1.1rem;cursor:none;transition:all .3s}
+.gm-x:hover{border-color:var(--orange);color:var(--orange)}
+.gm-body{flex:1;display:grid;grid-template-columns:1fr 280px;overflow:hidden}
+.gm-main{position:relative;display:flex;align-items:center;justify-content:center;background:#000}
+.gm-main img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.gm-nav{position:absolute;top:50%;transform:translateY(-50%);display:flex;justify-content:space-between;width:100%;padding:0 18px;pointer-events:none}
+.gm-nav button{pointer-events:all;background:rgba(17,24,39,.8);border:1px solid var(--glass-border);color:#fff;width:46px;height:46px;font-size:1.2rem;cursor:none;transition:all .3s;backdrop-filter:blur(10px)}
+.gm-nav button:hover{background:var(--orange);border-color:var(--orange)}
+.gm-thumbs{overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:7px;border-left:1px solid var(--glass-border)}
+.gm-thumb{width:100%;aspect-ratio:16/10;object-fit:cover;cursor:none;opacity:.45;transition:opacity .3s;border:2px solid transparent}
+.gm-thumb.on{opacity:1;border-color:var(--orange)}
+.gm-cap{padding:14px 36px;border-top:1px solid var(--glass-border);font-size:.78rem;color:rgba(255,255,255,.38)}
+
+/* TESTIMONIALS */
+#testimonials{background:var(--cream-light);padding:110px 48px}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:60px;max-width:1400px;margin-left:auto;margin-right:auto}
+.tcard{background:#fff;padding:44px 36px;border:1px solid rgba(0,0,0,.06);position:relative;overflow:hidden;transition:transform .4s var(--spring),box-shadow .4s}
+.tcard::before{content:'"';position:absolute;top:16px;right:24px;font-family:'Cormorant Garant',serif;font-size:7rem;font-weight:300;color:rgba(224,116,40,.07);line-height:1;pointer-events:none}
+.tcard:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,.1)}
+.t-stars{display:flex;gap:3px;margin-bottom:18px}
+.t-stars span{color:var(--orange)}
+.t-quote{font-family:'Cormorant Garant',serif;font-size:1.12rem;font-weight:400;line-height:1.72;color:var(--text);margin-bottom:26px;font-style:italic}
+.t-auth{display:flex;align-items:center;gap:14px;border-top:1px solid rgba(0,0,0,.06);padding-top:22px}
+.t-av{width:42px;height:42px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garant',serif;font-size:1.1rem;color:var(--orange);flex-shrink:0}
+.t-name{font-weight:500;font-size:.88rem;color:var(--text)}
+.t-loc{font-size:.72rem;color:#9ca3af;margin-top:2px}
+
+/* CTA BAND */
+.cta-band{background:var(--navy-light);border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border);padding:90px 48px;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;top:-50%;left:-10%;width:120%;height:200%;background:radial-gradient(ellipse at center,rgba(224,116,40,.08) 0%,transparent 60%);pointer-events:none}
+.cta-band .section-title{max-width:680px;margin:0 auto 36px}
+.cta-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* CONTACT */
+#contact{background:var(--navy);padding:110px 48px}
+.cont-in{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.c-det{display:flex;gap:18px;align-items:flex-start;margin-bottom:32px}
+.c-icon{width:42px;height:42px;border:1px solid var(--glass-border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.c-icon svg{width:17px;height:17px;stroke:var(--orange);fill:none;stroke-width:1.5;stroke-linecap:round}
+.c-lbl{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:5px}
+.c-val{font-size:.92rem;color:rgba(255,255,255,.82);font-weight:300}
+.c-form{display:flex;flex-direction:column;gap:18px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg{display:flex;flex-direction:column;gap:7px}
+.fg label{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.38)}
+.fg input,.fg textarea,.fg select{background:var(--glass);border:1px solid var(--glass-border);color:#fff;padding:13px 16px;font-family:'Outfit',sans-serif;font-size:.88rem;font-weight:300;outline:none;transition:border-color .3s;-webkit-appearance:none}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.2)}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--orange)}
+.fg textarea{resize:vertical;min-height:110px}
+.fg select option{background:var(--navy);color:#fff}
+
+/* FOOTER */
+footer{background:#080d15;padding:60px 48px 28px;border-top:1px solid var(--glass-border)}
+.ft-in{max-width:1400px;margin:0 auto}
+.ft-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand img{height:32px;filter:brightness(0) invert(1);margin-bottom:18px}
+.ft-brand p{font-size:.82rem;line-height:1.8;color:rgba(255,255,255,.3);font-weight:300;max-width:280px}
+.ft-col h4{font-family:'Cormorant Garant',serif;font-size:.82rem;font-weight:500;color:rgba(255,255,255,.6);letter-spacing:.1em;margin-bottom:18px;text-transform:uppercase}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.ft-col ul a{color:rgba(255,255,255,.3);text-decoration:none;font-size:.8rem;font-weight:300;transition:color .3s}
+.ft-col ul a:hover{color:var(--orange)}
+.ft-bot{border-top:1px solid var(--glass-border);padding-top:22px;display:flex;justify-content:space-between;align-items:center}
+.ft-copy{font-size:.72rem;color:rgba(255,255,255,.18)}
+.ft-copy span{color:rgba(255,255,255,.08);cursor:none}
+
+/* CONSULT MODAL */
+#cm{position:fixed;inset:0;z-index:9500;display:none;background:rgba(0,0,0,.92);backdrop-filter:blur(20px);align-items:center;justify-content:center}
+#cm.open{display:flex}
+.cm-box{background:var(--navy-light);border:1px solid var(--glass-border);padding:52px 44px;max-width:580px;width:90%;position:relative;max-height:90vh;overflow-y:auto}
+.cm-x{position:absolute;top:18px;right:18px;background:none;border:none;color:rgba(255,255,255,.38);font-size:1.3rem;cursor:none;transition:color .3s}
+.cm-x:hover{color:var(--orange)}
+.cm-box h2{font-family:'Cormorant Garant',serif;font-size:1.9rem;font-weight:300;color:#fff;margin-bottom:6px}
+.cm-box p{font-size:.82rem;color:rgba(255,255,255,.38);margin-bottom:32px}
+
+/* ADMIN */
+#am{position:fixed;inset:0;z-index:9600;display:none;background:rgba(0,0,0,.95);backdrop-filter:blur(24px);align-items:center;justify-content:center}
+#am.open{display:flex}
+.am-box{background:var(--navy-light);border:1px solid var(--glass-border);padding:44px;max-width:800px;width:90%;max-height:85vh;overflow-y:auto;position:relative}
+.am-x{position:absolute;top:14px;right:14px;background:none;border:none;color:rgba(255,255,255,.38);font-size:1.1rem;cursor:none}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(44px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv-l{opacity:0;transform:translateX(-44px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv-r{opacity:0;transform:translateX(44px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.vis,.rv-l.vis,.rv-r.vis{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* MOBILE NAV */
+#mob-nav{position:fixed;inset:0;z-index:990;background:var(--navy);transform:translateX(100%);transition:transform .4s var(--ease);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+#mob-nav.open{transform:translateX(0)}
+#mob-nav a{font-family:'Cormorant Garant',serif;font-size:2.4rem;font-weight:300;color:rgba(255,255,255,.78);text-decoration:none;transition:color .3s}
+#mob-nav a:hover{color:var(--orange)}
+
+@media(max-width:1024px){.why-grid{grid-template-columns:repeat(2,1fr)}.svc-grid{grid-template-columns:repeat(2,1fr)}.ft-top{grid-template-columns:1fr 1fr}.stats-in{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){nav,.about-in,#why,#services,#portfolio,#testimonials,#contact,.cta-band{padding-left:24px;padding-right:24px}nav{padding:16px 24px}nav.sc{padding:12px 24px}.nav-links,.nav-cta{display:none}.burger{display:flex}.hc{padding:0 24px}.about-in{grid-template-columns:1fr;gap:44px}.why-grid,.svc-grid,.testi-grid{grid-template-columns:1fr}.cont-in{grid-template-columns:1fr;gap:44px}.f-row{grid-template-columns:1fr}.stats-in{grid-template-columns:repeat(2,1fr)}.ft-top{grid-template-columns:1fr}.port-grid{grid-template-columns:1fr;padding:0 24px}.port-grid .pc.tall{grid-row:span 1}.port-hdr{flex-direction:column;align-items:flex-start;gap:18px}.sdots{display:none}.gm-body{grid-template-columns:1fr}.gm-thumbs{display:none}}
+</style>
+</head>
+<body>
+
+<div id="cur-o"></div>
+<div id="cur-i"></div>
+
+<!-- Preloader -->
+<div id="preloader">
+  <svg width="110" height="110" viewBox="0 0 120 120" id="pl-svg">
+    <path d="M60 10 L110 40 L110 80 L60 110 L10 80 L10 40 Z"/>
+    <path d="M60 32 L88 48 L88 72 L60 88 L32 72 L32 48 Z"/>
+    <path d="M60 52 L70 58 L70 66 L60 72 L50 66 L50 58 Z"/>
+  </svg>
+  <div id="pl-txt">DWELLING DESIGN</div>
+  <div id="pl-bar"></div>
+</div>
+
+<nav id="nav">
+  <a href="#" class="nav-logo mag">
+    <img src="images/logo-white.png" alt="Dwelling Design">
+    <span>Dwelling Design</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta mag" onclick="openCM()">Free Consultation</button>
+  <button class="burger" id="burger" onclick="toggleMob()"><span></span><span></span><span></span></button>
+</nav>
+
+<div id="mob-nav">
+  <a href="#about" onclick="toggleMob()">About</a>
+  <a href="#services" onclick="toggleMob()">Services</a>
+  <a href="#portfolio" onclick="toggleMob()">Portfolio</a>
+  <a href="#testimonials" onclick="toggleMob()">Reviews</a>
+  <a href="#contact" onclick="toggleMob()">Contact</a>
+  <button class="btn-p mag" onclick="openCM();toggleMob()">Free Consultation</button>
+</div>
+
+<section id="hero">
+  <canvas id="three-canvas"></canvas>
+  <div class="hero-slides" id="hslides"></div>
+  <div class="hero-overlay"></div>
+  <canvas id="ptcl"></canvas>
+  <div class="hc">
+    <div class="h-tag" id="htag">Idaho's Premier Design Studio</div>
+    <h1 class="h-h1" id="hh1">Architecture<br>That <em>Endures</em></h1>
+    <p class="h-sub" id="hsub">Bringing ideas to life takes creativity and attention to detail. We work alongside you to guide your project from day one to occupancy.</p>
+    <div class="h-acts" id="hacts">
+      <a href="#portfolio" class="btn-p mag">
+        View Portfolio
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <button class="btn-o mag" onclick="openCM()">Start a Project</button>
+    </div>
+  </div>
+  <div class="h-scroll" id="hscroll"><div class="h-scroll-line"></div><span>Scroll</span></div>
+  <div class="sdots" id="sdots"></div>
+</section>
+
+<div class="marquee">
+  <div class="m-inner">
+    <span>Custom Homes</span><span class="sep">◆</span><span>Architectural Design</span><span class="sep">◆</span><span>Construction Management</span><span class="sep">◆</span><span>3D Renderings</span><span class="sep">◆</span><span>McCall Idaho</span><span class="sep">◆</span><span>Boise Idaho</span><span class="sep">◆</span><span>25+ Years Experience</span><span class="sep">◆</span><span>Custom Homes</span><span class="sep">◆</span><span>Architectural Design</span><span class="sep">◆</span><span>Construction Management</span><span class="sep">◆</span><span>3D Renderings</span><span class="sep">◆</span><span>McCall Idaho</span><span class="sep">◆</span><span>Boise Idaho</span><span class="sep">◆</span><span>25+ Years Experience</span><span class="sep">◆</span>
+  </div>
+</div>
+
+<section id="about">
+  <div class="about-in">
+    <div class="aimg rv-l">
+      <div class="aimg-frame"><img src="images/mike.jpg" alt="Mike Belt"></div>
+      <div class="aimg-acc"></div>
+      <div class="aimg-stat"><div class="n" id="ctr1">0</div><div class="l">Years of Excellence</div></div>
+    </div>
+    <div class="rv-r">
+      <div class="section-label">Our Story</div>
+      <h2 class="section-title dk">Meet Mike Belt,<br><em style="font-style:italic;color:var(--orange)">Your Design Partner</em></h2>
+      <p class="a-desc">With degrees in Civil Engineering, Computer Drafting & Design, and Business Administration, Mike brings a rare combination of technical precision and creative vision to every project.</p>
+      <p class="a-desc">25+ years of experience in design and construction means your project stays on schedule, on budget, and true to the vision. From luxury custom homes to thoughtful remodels, every project reflects a relentless commitment to craft and detail.</p>
+      <p class="a-desc">Based in Idaho, we specialize in mountain modern, Mediterranean, and contemporary residential design — always drawn to the unique and the extraordinary.</p>
+      <div class="creds">
+        <div class="cred">Civil Engineering</div>
+        <div class="cred">Computer Drafting & Design</div>
+        <div class="cred">Business Administration</div>
+        <div class="cred">25+ Years Experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div style="max-width:1400px;margin:0 auto">
+    <div class="section-label rv">Why Dwelling Design</div>
+    <h2 class="section-title rv d1">Built on Trust, Delivered with Precision</h2>
+    <div class="why-grid">
+      <div class="why-card rv d1">
+        <div class="why-num">01</div>
+        <div class="why-icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M16 8v8l5 3"/></svg></div>
+        <div class="why-title">From Day One to Occupancy</div>
+        <div class="why-desc">We work alongside you from day one to occupancy, guiding your project through every phase with honest communication and genuine commitment to your vision.</div>
+      </div>
+      <div class="why-card rv d2">
+        <div class="why-num">02</div>
+        <div class="why-icon"><svg viewBox="0 0 32 32"><path d="M4 28V8l12-4 12 4v20M4 28h24"/><rect x="12" y="18" width="8" height="10"/></svg></div>
+        <div class="why-title">25+ Years of Experience</div>
+        <div class="why-desc">A quarter-century of design and construction expertise. Every project reflects a relentless commitment to craft and detail that only comes with experience.</div>
+      </div>
+      <div class="why-card rv d3">
+        <div class="why-num">03</div>
+        <div class="why-icon"><svg viewBox="0 0 32 32"><rect x="4" y="4" width="24" height="24" rx="1"/><path d="M4 12h24M12 4v8"/><line x1="8" y1="18" x2="24" y2="18"/><line x1="8" y1="22" x2="18" y2="22"/></svg></div>
+        <div class="why-title">Plans Built to Be Built</div>
+        <div class="why-desc">Our drawings are thorough, complete, and built to be built from. Contractors seek out Dwelling Design plans because they keep projects on time and on budget.</div>
+      </div>
+      <div class="why-card rv d4">
+        <div class="why-num">04</div>
+        <div class="why-icon"><svg viewBox="0 0 32 32"><path d="M16 4l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/></svg></div>
+        <div class="why-title">Complimentary Renderings</div>
+        <div class="why-desc">First-time collaborators receive complimentary photorealistic renderings as our way of helping your project shine before construction begins.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stats-in">
+    <div class="si rv"><div class="si-n" id="ctr-y">0</div><div class="si-l">Years of Experience</div></div>
+    <div class="si rv d1"><div class="si-n" id="ctr-p">0</div><div class="si-l">Projects Completed</div></div>
+    <div class="si rv d2"><div class="si-n" id="ctr-s">0</div><div class="si-l">States Served</div></div>
+    <div class="si rv d3"><div class="si-n" id="ctr-c">0</div><div class="si-l">Happy Clients</div></div>
+  </div>
+</div>
+
+<section id="services">
+  <div style="max-width:1400px;margin:0 auto">
+    <div class="section-label rv">What We Offer</div>
+    <h2 class="section-title dk rv d1">Full-Spectrum Design Services</h2>
+  </div>
+  <div class="svc-grid">
+    <div class="sc rv d1"><div class="sc-n">01</div><div class="sc-ico"><svg viewBox="0 0 32 32"><path d="M4 28V8l12-4 12 4v20M12 28v-8h8v8"/><line x1="4" y1="28" x2="28" y2="28"/></svg></div><div class="sc-name">Custom Home Design</div><div class="sc-desc">Full architectural design for new custom residences — from concept sketches through permit-ready construction documents.</div></div>
+    <div class="sc rv d2"><div class="sc-n">02</div><div class="sc-ico"><svg viewBox="0 0 32 32"><rect x="4" y="8" width="24" height="20" rx="1"/><path d="M8 8V6a8 8 0 0116 0v2"/></svg></div><div class="sc-name">Remodel & Addition</div><div class="sc-desc">Transform existing spaces with thoughtful additions and renovations that honor original architecture while introducing modern livability.</div></div>
+    <div class="sc rv d3"><div class="sc-n">03</div><div class="sc-ico"><svg viewBox="0 0 32 32"><rect x="4" y="4" width="24" height="24" rx="1"/><path d="M4 16h24M16 4v24"/></svg></div><div class="sc-name">Site Planning</div><div class="sc-desc">Comprehensive site analysis and layout planning that maximizes views, natural light, and the relationship between home and land.</div></div>
+    <div class="sc rv d1"><div class="sc-n">04</div><div class="sc-ico"><svg viewBox="0 0 32 32"><rect x="2" y="6" width="28" height="20" rx="1"/><path d="M8 6V4M24 6V4M2 14h28"/></svg></div><div class="sc-name">Interior Space Planning</div><div class="sc-desc">Detailed interior layout and flow design ensuring every room functions beautifully for the way you actually live.</div></div>
+    <div class="sc rv d2"><div class="sc-n">05</div><div class="sc-ico"><svg viewBox="0 0 32 32"><rect x="4" y="4" width="24" height="20" rx="1"/><line x1="4" y1="10" x2="28" y2="10"/><line x1="10" y1="4" x2="10" y2="10"/></svg></div><div class="sc-name">Architectural Illustration</div><div class="sc-desc">High-quality photorealistic renderings that make your project tangible before a single shovel breaks ground.</div></div>
+    <div class="sc rv d3"><div class="sc-n">06</div><div class="sc-ico"><svg viewBox="0 0 32 32"><rect x="2" y="10" width="28" height="18" rx="1"/><path d="M10 10V6a6 6 0 0112 0v4"/></svg></div><div class="sc-name">Construction Management</div><div class="sc-desc">Full Design/Build project management overseeing planning, design, and construction from start to finish.</div></div>
+  </div>
+</section>
+
+<section id="portfolio" style="padding:110px 0">
+  <div class="port-hdr">
+    <div>
+      <div class="section-label rv">Our Work</div>
+      <h2 class="section-title rv d1">Selected Projects</h2>
+    </div>
+    <div class="ftabs" id="ftabs">
+      <button class="ft on" data-f="all">All</button>
+      <button class="ft" data-f="Residential">Residential</button>
+      <button class="ft" data-f="Renderings">Renderings</button>
+    </div>
+  </div>
+  <div class="port-grid" id="pgrid"></div>
+</section>
+
+<section id="testimonials">
+  <div style="max-width:1400px;margin:0 auto">
+    <div class="section-label rv">Client Stories</div>
+    <h2 class="section-title dk rv d1">What Our Clients Say</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="tcard rv d1"><div class="t-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="t-quote">"Mike's vision and expertise transformed our mountain lot into something extraordinary. The plans were so detailed the contractor barely had a question — came in on time and on budget."</p><div class="t-auth"><div class="t-av">J</div><div><div class="t-name">James & Sara T.</div><div class="t-loc">McCall, Idaho</div></div></div></div>
+    <div class="tcard rv d2"><div class="t-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="t-quote">"The complimentary rendering Mike provided was stunning — it sold the design to our HOA instantly. Working with Dwelling Design was the best decision we made on this project."</p><div class="t-auth"><div class="t-av">R</div><div><div class="t-name">Robert & Linda K.</div><div class="t-loc">Boise, Idaho</div></div></div></div>
+    <div class="tcard rv d3"><div class="t-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="t-quote">"Genuinely collaborative from the very first call. Mike listened, pushed back where it mattered, and delivered a home that exceeded everything we'd imagined. We'll never hire anyone else."</p><div class="t-auth"><div class="t-av">M</div><div><div class="t-name">Michael & Christine P.</div><div class="t-loc">Treasure Valley, Idaho</div></div></div></div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="section-label rv" style="justify-content:center">Begin Your Project</div>
+  <h2 class="section-title rv d1">Ready to Build Something <em style="font-style:italic;color:var(--orange)">Extraordinary?</em></h2>
+  <p class="rv d2" style="color:rgba(255,255,255,.45);font-size:.92rem;margin-bottom:36px;font-weight:300">Schedule a free consultation and let's talk about bringing your vision to life.</p>
+  <div class="cta-acts rv d3">
+    <button class="btn-p mag" onclick="openCM()">Schedule Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    <a href="mailto:mbelt@dwellingdesign.net" class="btn-o mag">Email Us Directly</a>
+  </div>
+</div>
+
+<section id="contact">
+  <div class="cont-in">
+    <div>
+      <div class="section-label rv">Get In Touch</div>
+      <h2 class="section-title rv d1">Let's Start a Conversation</h2>
+      <p class="rv d2" style="color:rgba(255,255,255,.45);font-size:.88rem;line-height:1.8;margin-bottom:44px;font-weight:300">Whether you have a clear vision or just a beautiful piece of land, we'd love to hear from you. Every great home starts with a conversation.</p>
+      <div class="c-det rv d2"><div class="c-icon"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="c-lbl">Location</div><div class="c-val">Idaho — Serving Treasure Valley, McCall & Beyond</div></div></div>
+      <div class="c-det rv d3"><div class="c-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="c-lbl">Email</div><div class="c-val">mbelt@dwellingdesign.net</div></div></div>
+    </div>
+    <div class="c-form rv-r">
+      <div class="f-row"><div class="fg"><label>First Name</label><input type="text" placeholder="John"></div><div class="fg"><label>Last Name</label><input type="text" placeholder="Smith"></div></div>
+      <div class="fg"><label>Email</label><input type="email" placeholder="john@example.com"></div>
+      <div class="fg"><label>Phone</label><input type="tel" placeholder="(208) 000-0000"></div>
+      <div class="fg"><label>Project Type</label><select><option value="">Select a service…</option><option>Custom Home Design</option><option>Remodel / Addition</option><option>Site Planning</option><option>Interior Planning</option><option>Architectural Rendering</option><option>Construction Management</option></select></div>
+      <div class="fg"><label>Project Description</label><textarea placeholder="Describe your vision, timeline, and any key details…"></textarea></div>
+      <button class="btn-p mag" style="justify-content:center;width:100%" onclick="submitForm(this)">Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-in">
+    <div class="ft-top">
+      <div class="ft-brand"><img src="images/logo-white.png" alt="Dwelling Design"><p>25+ years of architectural design excellence in Idaho. From luxury custom homes to thoughtful remodels, every project is a story of craft and vision.</p></div>
+      <div class="ft-col"><h4>Services</h4><ul><li><a href="#services">Custom Home Design</a></li><li><a href="#services">Remodel & Addition</a></li><li><a href="#services">Site Planning</a></li><li><a href="#services">Interior Planning</a></li><li><a href="#services">Renderings</a></li><li><a href="#services">Construction Mgmt</a></li></ul></div>
+      <div class="ft-col"><h4>Portfolio</h4><ul><li><a href="#portfolio">Whitetail Migratory</a></li><li><a href="#portfolio">Whitetail Drive</a></li><li><a href="#portfolio">Terra Nativa</a></li><li><a href="#portfolio">Laguna Point</a></li><li><a href="#portfolio">Lakeview</a></li><li><a href="#portfolio">Hackberry Ranch</a></li></ul></div>
+      <div class="ft-col"><h4>Contact</h4><ul><li><a href="mailto:mbelt@dwellingdesign.net">mbelt@dwellingdesign.net</a></li><li><a href="#contact">Send a Message</a></li><li><a href="#" onclick="openCM()">Free Consultation</a></li></ul></div>
+    </div>
+    <div class="ft-bot">
+      <p class="ft-copy">© <span id="yr"></span> Dwelling Design. All rights reserved. <span id="adm-t" onclick="admClick()">·</span></p>
+      <p class="ft-copy">Designed with precision.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Gallery Modal -->
+<div id="gm">
+  <div class="gm-hdr"><div><div class="gm-proj" id="gm-proj"></div><div class="gm-loc" id="gm-loc"></div></div><button class="gm-x" onclick="closeGM()">✕</button></div>
+  <div class="gm-body"><div class="gm-main" id="gm-main"><img id="gm-img" src="" alt=""><div class="gm-nav"><button onclick="gmNav(-1)">‹</button><button onclick="gmNav(1)">›</button></div></div><div class="gm-thumbs" id="gm-thumbs"></div></div>
+  <div class="gm-cap" id="gm-cap"></div>
+</div>
+
+<!-- Consultation Modal -->
+<div id="cm">
+  <div class="cm-box">
+    <button class="cm-x" onclick="closeCM()">✕</button>
+    <h2>Free Consultation</h2>
+    <p>Tell us about your project and we'll reach out within 24 hours.</p>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="f-row"><div class="fg"><label>First Name</label><input type="text" placeholder="John"></div><div class="fg"><label>Last Name</label><input type="text" placeholder="Smith"></div></div>
+      <div class="fg"><label>Email</label><input type="email" placeholder="john@example.com"></div>
+      <div class="fg"><label>Phone</label><input type="tel" placeholder="(208) 000-0000"></div>
+      <div class="fg"><label>Project Type</label><select><option>Custom Home Design</option><option>Remodel / Addition</option><option>Site Planning</option><option>Rendering</option><option>Other</option></select></div>
+      <div class="fg"><label>Project Description</label><textarea placeholder="Tell us about your vision…" style="min-height:90px"></textarea></div>
+      <button class="btn-p mag" style="justify-content:center" onclick="submitConsult(this)">Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+</div>
+
+<!-- Admin Modal -->
+<div id="am"><div class="am-box"><button class="am-x" onclick="closeAM()">✕</button><h2 style="font-family:'Cormorant Garant',serif;font-size:1.5rem;font-weight:300;color:#fff;margin-bottom:20px">Admin Access</h2><div id="am-c"><div class="fg" style="margin-bottom:14px"><label>Password</label><input type="password" id="ap" placeholder="Enter password" onkeydown="if(event.key==='Enter')checkAM()"></div><button class="btn-p" onclick="checkAM()">Unlock</button></div></div></div>
+
+<script>
+// ── DATA ─────────────────────────────────────────────────
+const PROJECTS = [
+  {name:"Whitetail Migratory Ridge",loc:"McCall, Idaho",type:"Residential",desc:"Mountaintop Modern home curated to capture views from every space.",cover:"pimg_wmr3",photos:[{id:"pimg_wmr3",cap:"Aerial view — full estate and sweeping valley views"},{id:"pimg_wmr4",cap:"Aerial perspective with stone terracing"},{id:"pimg_wmr0",cap:"Front exterior with circular driveway"},{id:"pimg_wmr2",cap:"Grand entry with floor-to-ceiling glass"},{id:"pimg_wmr6",cap:"Street-side view"},{id:"pimg_wmr1",cap:"Rear exterior with covered patio"},{id:"pimg_wmr11",cap:"Great room with floor-to-ceiling glass"},{id:"pimg_wmr10",cap:"Soaring stone fireplace"},{id:"pimg_wmr14",cap:"Chef's kitchen with mountain views"},{id:"pimg_wmr7",cap:"Master suite with panoramic windows"},{id:"pimg_wmr9",cap:"Master bath with marble countertops"},{id:"pimg_wmr15",cap:"Formal dining with dramatic chandelier"}]},
+  {name:"Whitetail Drive",loc:"McCall, Idaho",type:"Residential",desc:"Mountain modern dwelling reflected in a private pond.",cover:"pimg_wd0",photos:[{id:"pimg_wd0",cap:"Lakeside reflection — mountain modern design"},{id:"pimg_wd1",cap:"Rear exterior with expansive lawn"},{id:"pimg_wd_1",cap:"Covered patio overlooking the pond"},{id:"pimg_wd_4",cap:"Great room with soaring ceiling"},{id:"pimg_wd_5",cap:"Dining area with bespoke artwork"},{id:"pimg_wd_7",cap:"Living area with natural light"},{id:"pimg_wd_6",cap:"Primary suite with soaking tub"},{id:"pimg_wd_8",cap:"Primary bath with double floating vanity"}]},
+  {name:"Terra Nativa",loc:"Boise, Idaho",type:"Residential",desc:"Elegant Mediterranean architecture with modern Spanish influences.",cover:"pimg_ref_h001",photos:[{id:"pimg_ref_h001",cap:"Estate aerial with downtown Boise backdrop"},{id:"pimg_ref_h011",cap:"Dome tower detail"},{id:"pimg_tn3",cap:"Courtyard with stone fountain"},{id:"pimg_tn4",cap:"View through arched entry"},{id:"pimg_tn5",cap:"Great room with coffered ceiling"},{id:"pimg_tn6",cap:"Grand dining with curved iron staircase"},{id:"pimg_tn7",cap:"Tower rotunda with hand-laid brick dome"}]},
+  {name:"Laguna Point",loc:"Treasure Valley, Idaho",type:"Residential",desc:"Transitional home combining stone and natural timbers.",cover:"pimg_hr0",photos:[{id:"pimg_hr0",cap:"Front exterior at dusk"},{id:"pimg_lp1",cap:"Night exterior with illuminated stone walls"},{id:"pimg_lp0",cap:"Estate at dusk — travertine patio"},{id:"pimg_lp2",cap:"Covered outdoor kitchen pavilion"},{id:"pimg_lp3",cap:"Stone-clad covered porch"}]},
+  {name:"Lakeview",loc:"McCall, Idaho",type:"Residential",desc:"Set on beautiful Payette Lake with spectacular views.",cover:"pimg_lakeview_new2",photos:[{id:"pimg_lakeview_new2",cap:"Lakefront view with private dock"},{id:"pimg_lakeview_new5",cap:"Aerial view on Payette Lake"},{id:"pimg_lakeview_new1",cap:"Forest path to the residence"},{id:"pimg_lakeview_new3",cap:"Cantilevered deck with panoramic views"},{id:"pimg_lakeview_new4",cap:"Hillside elevation"}]},
+  {name:"Hackberry Ranch",loc:"Boise, Idaho",type:"Residential",desc:"Modern Prairie design with clean lines and contemporary finishes.",cover:"pimg_hb_1",photos:[{id:"pimg_hb_1",cap:"Front exterior — modern prairie design"},{id:"pimg_hb_10",cap:"Approach from the driveway"},{id:"pimg_hb_5",cap:"Living room with TV feature wall"},{id:"pimg_hb_6",cap:"Open kitchen with oversized island"},{id:"pimg_hb_2",cap:"Entertainment cabinet with custom millwork"},{id:"pimg_hb_7",cap:"Powder bath with stone wall"},{id:"pimg_hb_8",cap:"Staircase with glass railing"}]},
+  {name:"Hendrickson",loc:"McCall, Idaho",type:"Residential",desc:"Mountain modern retreat with cedar, stone, and expansive glass.",cover:"pimg_hend1",photos:[{id:"pimg_hend1",cap:"Rear exterior with cedar siding"},{id:"pimg_hend2",cap:"Front entry with cedar facade"},{id:"pimg_hend3",cap:"Aerial view in the mountains"},{id:"pimg_hend5",cap:"Great room with vaulted wood ceiling"},{id:"pimg_hend6",cap:"Dining with floor-to-ceiling windows"},{id:"pimg_hend7",cap:"Kitchen with custom island"},{id:"pimg_hend8",cap:"Powder bath with hand-laid tile"}]},
+  {name:"Renderings",loc:"",type:"Renderings",desc:"Architectural renderings capturing projects before construction.",cover:"pimg_rend_new1",photos:[{id:"pimg_rend_new1",cap:"French country residence — photorealistic rendering"},{id:"pimg_rend_new2",cap:"Modern Boise residence — rendering"},{id:"pimg_rnd_5",cap:"Timber-framed lodge rendering"},{id:"pimg_rnd_11",cap:"Mountain modern with cantilevered deck"},{id:"pimg_rnd_14",cap:"Library great room with barrel-arch windows"},{id:"pimg_rnd_15",cap:"Long cedar and stone residence at dusk"},{id:"pimg_rnd_9",cap:"Mountain modern with hot tub terrace"},{id:"pimg_rnd_10",cap:"Dusk retreat set into the landscape"},{id:"pimg_rnd_12",cap:"Aerial view of residence"},{id:"pimg_rnd_13",cap:"Glass A-frame at dusk"}]}
+];
+
+function S(id){return document.getElementById(id)}
+function imgSrc(id){const e=S(id);return e?e.src:''}
+
+// ── CURSOR ───────────────────────────────────────────────
+const cO=S('cur-o'),cI=S('cur-i');
+let mx=-100,my=-100,ox=-100,oy=-100;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  cI.style.left=mx+'px';cI.style.top=my+'px';
+});
+(function tick(){ox+=(mx-ox)*.1;oy+=(my-oy)*.1;cO.style.left=ox+'px';cO.style.top=oy+'px';requestAnimationFrame(tick)})();
+document.querySelectorAll('a,button,.pc,.ft').forEach(el=>{
+  el.addEventListener('mouseenter',()=>document.body.classList.add('cur-hover'));
+  el.addEventListener('mouseleave',()=>document.body.classList.remove('cur-hover'));
+});
+
+// ── PRELOADER ────────────────────────────────────────────
+window.addEventListener('load',()=>{
+  setTimeout(()=>{S('preloader').classList.add('gone');animHero();},1800);
+});
+
+// ── HERO ANIM ────────────────────────────────────────────
+function animHero(){
+  [['htag',0],['hh1',150],['hsub',300],['hacts',450],['hscroll',650]].forEach(([id,d])=>{
+    const el=S(id);if(!el)return;
+    setTimeout(()=>{el.style.transition='opacity .8s ease,transform .8s ease';el.style.opacity='1';el.style.transform='none';},d);
+  });
+}
+
+// ── HERO SLIDES ──────────────────────────────────────────
+const slidePool=['hero_a','hero_b','hero_c','hero_d','hero_e'];
+const hsl=S('hslides'),sdt=S('sdots');
+let si=0;
+slidePool.forEach((id,i)=>{
+  const src=imgSrc(id);
+  if(!src)return;
+  const d=document.createElement('div');
+  d.className='hs'+(i===0?' on':'');
+  d.style.backgroundImage=`url('${src}')`;
+  hsl.appendChild(d);
+  const b=document.createElement('button');
+  b.className='sdot'+(i===0?' on':'');
+  b.onclick=()=>goSlide(i);
+  sdt.appendChild(b);
+});
+function goSlide(n){
+  const sls=document.querySelectorAll('.hs'),dts=document.querySelectorAll('.sdot');
+  if(!sls.length)return;
+  sls[si].classList.remove('on');dts[si].classList.remove('on');
+  si=((n%sls.length)+sls.length)%sls.length;
+  sls[si].classList.add('on');dts[si].classList.add('on');
+}
+setInterval(()=>goSlide(si+1),5000);
+
+// ── THREE.JS ─────────────────────────────────────────────
+try{
+  const cv=S('three-canvas');
+  const rdr=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true});
+  rdr.setPixelRatio(Math.min(devicePixelRatio,2));
+  rdr.setSize(cv.offsetWidth,cv.offsetHeight);
+  const sc=new THREE.Scene();
+  const cam=new THREE.PerspectiveCamera(60,cv.offsetWidth/cv.offsetHeight,0.1,1000);
+  cam.position.z=8;
+  const mat1=new THREE.LineBasicMaterial({color:0xe07428,transparent:true,opacity:0.15});
+  const mat2=new THREE.LineBasicMaterial({color:0xffffff,transparent:true,opacity:0.05});
+  const wf1=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(2.4,1)),mat1);
+  const wf2=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.OctahedronGeometry(3.8,0)),mat2);
+  const wf3=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1.6,1.6,1.6)),mat1.clone());
+  sc.add(wf1);sc.add(wf2);sc.add(wf3);
+  let tmx=0,tmy=0;
+  document.addEventListener('mousemove',e=>{tmx=(e.clientX/innerWidth-.5)*2;tmy=(e.clientY/innerHeight-.5)*2;});
+  (function al(){
+    requestAnimationFrame(al);
+    const t=Date.now()*.0003;
+    wf1.rotation.x=t*.4+tmy*.25;wf1.rotation.y=t*.6+tmx*.25;
+    wf2.rotation.x=-t*.2;wf2.rotation.y=t*.3+tmx*.1;
+    wf3.rotation.x=t*.8;wf3.rotation.y=-t*.5+tmx*.18;
+    rdr.render(sc,cam);
+  })();
+  window.addEventListener('resize',()=>{
+    const w=cv.offsetWidth,h=cv.offsetHeight;
+    rdr.setSize(w,h);cam.aspect=w/h;cam.updateProjectionMatrix();
+  });
+}catch(e){console.warn('Three.js unavailable',e);}
+
+// ── PARTICLES ────────────────────────────────────────────
+(function(){
+  const cv=S('ptcl'),ctx=cv.getContext('2d');
+  let W,H;
+  const resize=()=>{W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;};
+  resize();window.addEventListener('resize',resize);
+  const pts=Array.from({length:55},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:-Math.random()*.45-.08,r:Math.random()*1.4+.4,a:Math.random()}));
+  (function tick(){
+    ctx.clearRect(0,0,W,H);
+    pts.forEach(p=>{
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.y<-8){p.y=H+8;p.x=Math.random()*W;}
+      if(p.x<0)p.x=W;if(p.x>W)p.x=0;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(224,116,40,${p.a*.35})`;ctx.fill();
+    });
+    requestAnimationFrame(tick);
+  })();
+})();
+
+// ── NAV ──────────────────────────────────────────────────
+window.addEventListener('scroll',()=>S('nav').classList.toggle('sc',scrollY>60));
+
+// ── MOBILE NAV ───────────────────────────────────────────
+function toggleMob(){S('mob-nav').classList.toggle('open');S('burger').classList.toggle('open');}
+
+// ── SCROLL REVEAL ────────────────────────────────────────
+const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target);}});},{threshold:.1});
+document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el=>ro.observe(el));
+
+// ── COUNTERS ─────────────────────────────────────────────
+function animCtr(el,target){let c=0;(function s(){c=Math.min(c+target/55,target);el.textContent=Math.floor(c)+'+';if(c<target)requestAnimationFrame(s);})();}
+const co=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const id=e.target.id;if(id==='ctr1')animCtr(e.target,25);if(id==='ctr-y')animCtr(e.target,25);if(id==='ctr-p')animCtr(e.target,200);if(id==='ctr-s')animCtr(e.target,5);if(id==='ctr-c')animCtr(e.target,150);co.unobserve(e.target);}});},{threshold:.5});
+['ctr1','ctr-y','ctr-p','ctr-s','ctr-c'].forEach(id=>{const e=S(id);if(e)co.observe(e);});
+
+// ── PORTFOLIO ────────────────────────────────────────────
+let curF='all';
+function renderGrid(){
+  const filtered=curF==='all'?PROJECTS:PROJECTS.filter(p=>p.type===curF);
+  const g=S('pgrid');g.innerHTML='';
+  filtered.forEach((p,i)=>{
+    const tall=i===0||i===3;
+    const card=document.createElement('div');
+    card.className='pc'+(tall?' tall':'');
+    const src=imgSrc(p.cover)||'';
+    card.innerHTML=`<span class="pc-num">${String(i+1).padStart(2,'0')}</span><img class="pc-img" src="${src}" alt="${p.name}" loading="lazy"><div class="pc-ov"><div class="pc-tag">${p.type}${p.loc?' · '+p.loc:''}</div><div class="pc-name">${p.name}</div><div class="pc-loc">${p.desc}</div><button class="pc-btn">View Project →</button></div>`;
+    const origIdx=PROJECTS.indexOf(p);
+    card.onclick=()=>openGM(origIdx);
+    card.querySelector('.pc-btn').onclick=e=>{e.stopPropagation();openGM(origIdx);};
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const xp=(e.clientX-r.left)/r.width-.5,yp=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(900px) rotateY(${xp*8}deg) rotateX(${-yp*8}deg) scale(1.02)`;
+    });
+    card.addEventListener('mouseleave',()=>{card.style.transform='';});
+    g.appendChild(card);
+    setTimeout(()=>{card.style.transition='opacity .45s ease,transform .45s ease,box-shadow .4s';card.style.opacity='1';card.style.transform='';},i*55);
+    card.style.opacity='0';card.style.transform='translateY(28px)';
+  });
+}
+renderGrid();
+document.querySelectorAll('.ft').forEach(t=>{
+  t.onclick=()=>{document.querySelectorAll('.ft').forEach(x=>x.classList.remove('on'));t.classList.add('on');curF=t.dataset.f;renderGrid();};
+});
+
+// ── GALLERY MODAL ────────────────────────────────────────
+let ap=0,aph=0;
+function openGM(idx){ap=idx;aph=0;renderGM();S('gm').classList.add('open');document.body.style.overflow='hidden';}
+function closeGM(){S('gm').classList.remove('open');document.body.style.overflow='';}
+function renderGM(){
+  const p=PROJECTS[ap],ph=p.photos[aph];
+  S('gm-proj').textContent=p.name;S('gm-loc').textContent=p.loc;
+  S('gm-img').src=imgSrc(ph.id);S('gm-cap').textContent=ph.cap;
+  const tb=S('gm-thumbs');tb.innerHTML='';
+  p.photos.forEach((x,i)=>{const img=document.createElement('img');img.className='gm-thumb'+(i===aph?' on':'');img.src=imgSrc(x.id);img.onclick=()=>{aph=i;renderGM();};tb.appendChild(img);});
+}
+function gmNav(d){const p=PROJECTS[ap];aph=((aph+d)+p.photos.length)%p.photos.length;renderGM();}
+document.addEventListener('keydown',e=>{
+  if(S('gm').classList.contains('open')){if(e.key==='ArrowRight')gmNav(1);if(e.key==='ArrowLeft')gmNav(-1);if(e.key==='Escape')closeGM();}
+  if(S('cm').classList.contains('open')&&e.key==='Escape')closeCM();
+});
+
+// ── CONSULT MODAL ────────────────────────────────────────
+function openCM(){S('cm').classList.add('open');document.body.style.overflow='hidden';}
+function closeCM(){S('cm').classList.remove('open');document.body.style.overflow='';}
+S('cm').addEventListener('click',e=>{if(e.target===S('cm'))closeCM();});
+
+// ── FORMS ────────────────────────────────────────────────
+function submitForm(btn){btn.textContent='Message Sent ✓';btn.style.background='#16a34a';setTimeout(()=>{btn.innerHTML='Send Message';btn.style.background='';},3000);}
+function submitConsult(btn){btn.textContent='Request Sent ✓';btn.style.background='#16a34a';setTimeout(()=>{closeCM();btn.innerHTML='Request Consultation';btn.style.background='';},2000);}
+
+// ── MAGNETIC BUTTONS ─────────────────────────────────────
+document.querySelectorAll('.mag').forEach(b=>{
+  b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();const x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;b.style.transform=`translate(${x*.16}px,${y*.25}px)`;});
+  b.addEventListener('mouseleave',()=>{b.style.transform='';});
+});
+
+// ── ADMIN ────────────────────────────────────────────────
+let ac=0,at;
+function admClick(){ac++;clearTimeout(at);at=setTimeout(()=>ac=0,2000);if(ac>=5){ac=0;S('am').classList.add('open');document.body.style.overflow='hidden';}}
+function closeAM(){S('am').classList.remove('open');document.body.style.overflow='';}
+function checkAM(){if(S('ap').value==='dwelling2024'){S('am-c').innerHTML=`<p style="color:rgba(255,255,255,.6);font-size:.83rem">Admin panel active. ${PROJECTS.length} projects · ${PROJECTS.reduce((a,p)=>a+p.photos.length,0)} photos indexed.</p>`;}else{S('ap').style.borderColor='#d43d2a';setTimeout(()=>S('ap').style.borderColor='',900);}}
+
+// ── FOOTER YEAR ──────────────────────────────────────────
+S('yr').textContent=new Date().getFullYear();
+
+// ── SMOOTH SCROLL ────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});
+});
+</script>
+</body>
+</html>

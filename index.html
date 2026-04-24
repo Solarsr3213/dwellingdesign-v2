@@ -725,22 +725,10 @@ function closeCM(){S('cm').classList.remove('open');document.body.style.overflow
 S('cm').addEventListener('click',e=>{if(e.target===S('cm'))closeCM();});
 
 // ── FORMS ────────────────────────────────────────────────
-function _fsSubmit(fields, subject){
-  /* Hidden-iframe trick: submits to FormSubmit without any page redirect */
-  let iframe=document.getElementById('_fs_frame');
-  if(!iframe){iframe=document.createElement('iframe');iframe.name='_fs_frame';iframe.id='_fs_frame';iframe.style='display:none';document.body.appendChild(iframe);}
-  const form=document.createElement('form');
-  form.method='POST';
-  form.action='https://formsubmit.co/mbelt@dwellingdesign.net';
-  form.target='_fs_frame';
-  const add=(n,v)=>{const i=document.createElement('input');i.type='hidden';i.name=n;i.value=v;form.appendChild(i);};
-  Object.entries(fields).forEach(([k,v])=>add(k,v));
-  add('_subject',subject);
-  add('_captcha','false');
-  add('_template','table');
-  document.body.appendChild(form);
-  form.submit();
-  document.body.removeChild(form);
+const GAS_URL='https://script.google.com/macros/s/AKfycbzFGXJNYjtryGLsLcYnlEX-wreg-z8pLccwxHF-bXIsY7RpcIgNUkNACFk53hAQqkGL/exec';
+function _sendEmail(payload){
+  /* no-cors: GAS doesn't return CORS headers, but the POST still executes and email gets sent */
+  fetch(GAS_URL+'?'+new URLSearchParams(payload),{method:'GET',mode:'no-cors'}).catch(()=>{});
 }
 function submitForm(btn){
   const sec=btn.closest('.c-form')||btn.closest('section');
@@ -748,8 +736,8 @@ function submitForm(btn){
   const first=inputs[0]?.value||'';const last=inputs[1]?.value||'';
   const email=inputs[2]?.value||'';const phone=inputs[3]?.value||'';
   const type=inputs[4]?.value||'';const desc=inputs[5]?.value||'';
-  if(!first||!email){btn.textContent='Fill in your name & email';btn.style.background='#dc2626';setTimeout(()=>{btn.innerHTML='Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},2500);return;}
-  _fsSubmit({name:first+' '+last,email,phone,'project type':type,description:desc},'New Message from '+first+' '+last);
+  if(!first||!email){btn.textContent='Fill in name & email first';btn.style.background='#dc2626';setTimeout(()=>{btn.innerHTML='Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},2500);return;}
+  _sendEmail({name:first+' '+last,email,phone,project_type:type,description:desc,subject:'New Message from '+first+' '+last});
   btn.textContent='Message Sent! ✓';btn.style.background='#16a34a';
   setTimeout(()=>{btn.innerHTML='Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},3000);
 }
@@ -759,8 +747,8 @@ function submitConsult(btn){
   const first=inputs[0]?.value||'';const last=inputs[1]?.value||'';
   const email=inputs[2]?.value||'';const phone=inputs[3]?.value||'';
   const type=inputs[4]?.value||'';const desc=inputs[5]?.value||'';
-  if(!first||!email){btn.textContent='Fill in your name & email';btn.style.background='#dc2626';setTimeout(()=>{btn.innerHTML='Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},2500);return;}
-  _fsSubmit({name:first+' '+last,email,phone,'project type':type,description:desc},'Consultation Request from '+first+' '+last);
+  if(!first||!email){btn.textContent='Fill in name & email first';btn.style.background='#dc2626';setTimeout(()=>{btn.innerHTML='Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},2500);return;}
+  _sendEmail({name:first+' '+last,email,phone,project_type:type,description:desc,subject:'Consultation Request from '+first+' '+last});
   btn.textContent='Request Sent! ✓';btn.style.background='#16a34a';
   setTimeout(()=>{closeCM();btn.innerHTML='Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},2500);
 }

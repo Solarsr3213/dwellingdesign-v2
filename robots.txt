@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://www.dwellingdesign.net/sitemap.xml
 Sitemap: https://solarsr3213.github.io/dwellingdesign-v2/sitemap.xml

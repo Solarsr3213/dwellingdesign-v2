@@ -647,7 +647,8 @@ footer{background:#080d15;padding:60px 48px 28px;border-top:1px solid var(--glas
       <h2 class="section-title rv d1">Let's Start a Conversation</h2>
       <p class="rv d2" style="color:rgba(255,255,255,.45);font-size:.88rem;line-height:1.8;margin-bottom:44px;font-weight:300">Whether you have a clear vision or just a beautiful piece of land, we'd love to hear from you. Every great home starts with a conversation.</p>
       <div class="c-det rv d2"><div class="c-icon"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="c-lbl">Location</div><div class="c-val">Idaho — Serving Treasure Valley, McCall & Beyond</div></div></div>
-      <div class="c-det rv d3"><div class="c-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="c-lbl">Email</div><div class="c-val">mbelt@dwellingdesign.net</div></div></div>
+      <div class="c-det rv d3"><div class="c-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="c-lbl">Email</div><div class="c-val"><a href="mailto:mbelt@dwellingdesign.net" style="color:rgba(255,255,255,.82);text-decoration:none">mbelt@dwellingdesign.net</a></div></div></div>
+      <div class="c-det rv d4"><div class="c-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 010 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><div class="c-lbl">Phone</div><div class="c-val"><a href="tel:+12086311362" style="color:rgba(255,255,255,.82);text-decoration:none">208-631-1362</a></div></div></div>
     </div>
     <div class="c-form rv-r">
       <div class="f-row"><div class="fg"><label>First Name</label><input type="text" placeholder="John"></div><div class="fg"><label>Last Name</label><input type="text" placeholder="Smith"></div></div>
@@ -875,7 +876,9 @@ async function _sendEmail(payload){
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({name:payload.name,email:payload.email,phone:payload.phone||'',project_type:payload.project_type||'',description:payload.description||'',_subject:payload.subject||'New Message from '+payload.name,_captcha:'false',_template:'table',_replyto:payload.email})
     });
-    return r.ok;
+    if(!r.ok) return false;
+    const data=await r.json().catch(()=>({}));
+    return data.success==='true'||data.success===true;
   }catch(e){return false;}
 }
 const _FALLBACK='<p style="margin-top:14px;font-size:.82rem;color:rgba(255,255,255,.45);text-align:center">Trouble sending? Email directly: <a href="mailto:mbelt@dwellingdesign.net" style="color:var(--orange)">mbelt@dwellingdesign.net</a> or call <a href="tel:+12086311362" style="color:var(--orange)">208-631-1362</a></p>';
@@ -932,7 +935,7 @@ S('yr').textContent=new Date().getFullYear();
 // ── JSON-LD SCHEMA ───────────────────────────────────────
 const schema={
   "@context":"https://schema.org",
-  "@type":["LocalBusiness","ProfessionalService"],
+  "@type":["LocalBusiness","ProfessionalService","HomeAndConstructionBusiness"],
   "@id":"https://solarsr3213.github.io/dwellingdesign-v2/",
   "name":"Dwelling Design",
   "description":"AIBD Certified Professional Building Designer with 25+ years experience offering custom home design, mountain modern architecture, ADU design, remodels, site planning, and photorealistic renderings in Boise, McCall, and Treasure Valley, Idaho.",

@@ -546,6 +546,22 @@ footer{background:#080d15;padding:60px 48px 28px;border-top:1px solid var(--glas
         <summary>What is an AIBD Certified Professional Building Designer?</summary>
         <p class="faq-ans">The AIBD (American Institute of Building Design) Certified Professional Building Designer credential is the highest designation for residential building designers in the United States. It requires extensive experience, passing a rigorous national exam, and ongoing continuing education. Mike Belt holds this certification — it means you're working with a designer who has met the same standard of professional accountability as a licensed architect, specifically for residential design. In Idaho and most states, AIBD Certified designers can stamp and submit residential construction documents for permitting.</p>
       </details>
+      <details class="faq-item rv d1">
+        <summary>Can you design a home in the Whitetail Club or on Payette Lake?</summary>
+        <p class="faq-ans">Yes — Dwelling Design has designed multiple luxury residences in the Whitetail Club and on Payette Lake. Mike Belt's mountain modern design aesthetic was built for these settings: expansive glazing that frames lake and mountain views, natural stone and timber detailing, and floor plans that connect indoor and outdoor living. If you're building in McCall, Cascade, or Valley County, Dwelling Design is the designer of choice for high-performance mountain homes.</p>
+      </details>
+      <details class="faq-item rv d2">
+        <summary>What is the difference between a custom home designer and a general contractor in Idaho?</summary>
+        <p class="faq-ans">A custom home designer — like Mike Belt at Dwelling Design — creates the architectural plans, floor plans, elevations, and construction documents that define your home before construction begins. A general contractor then builds from those plans. Dwelling Design also offers Construction Management services, acting as your advocate throughout the build to ensure your design vision is executed correctly. This full-service approach from design through construction oversight is a key advantage for clients building in Boise, McCall, and throughout Idaho.</p>
+      </details>
+      <details class="faq-item rv d3">
+        <summary>Do you provide architectural renderings in Boise or McCall, Idaho?</summary>
+        <p class="faq-ans">Yes — photorealistic 3D architectural renderings are a core service at Dwelling Design. Before a single shovel breaks ground, we produce high-quality exterior renderings that show your home's final appearance in context with its site. This is especially valuable for mountain properties where siting, views, and massing are critical. First-time clients often receive complimentary renderings as part of their custom home design package. We serve clients in Boise, McCall, Treasure Valley, Sun Valley, and throughout Idaho.</p>
+      </details>
+      <details class="faq-item rv d4">
+        <summary>Can Dwelling Design help me get permits for my new home in Idaho?</summary>
+        <p class="faq-ans">Yes. Dwelling Design produces complete permit-ready construction document packages accepted by building departments throughout Idaho, including Ada County, Valley County, Boise City, and smaller mountain communities. As an AIBD Certified Professional Building Designer, Mike Belt can sign and submit residential construction documents for permitting in Idaho. We're familiar with local code requirements across Boise, McCall, Eagle, Meridian, Nampa, and surrounding areas to make the permitting process as smooth as possible.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -842,13 +858,15 @@ S('cm').addEventListener('click',e=>{if(e.target===S('cm'))closeCM();});
 // First submission triggers a one-time activation email to mbelt@dwellingdesign.net.
 async function _sendEmail(payload){
   try{
-    await fetch('https://formsubmit.co/ajax/mbelt@dwellingdesign.net',{
+    const r=await fetch('https://formsubmit.co/ajax/mbelt@dwellingdesign.net',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({name:payload.name,email:payload.email,phone:payload.phone||'',project_type:payload.project_type||'',description:payload.description||'',_subject:payload.subject||'New Message from '+payload.name,_captcha:'false',_template:'table',_replyto:payload.email})
     });
-  }catch(e){}
+    return r.ok;
+  }catch(e){return false;}
 }
+const _FALLBACK='<p style="margin-top:14px;font-size:.82rem;color:rgba(255,255,255,.45);text-align:center">Trouble sending? Email directly: <a href="mailto:mbelt@dwellingdesign.net" style="color:var(--orange)">mbelt@dwellingdesign.net</a> or call <a href="tel:+12086311362" style="color:var(--orange)">208-631-1362</a></p>';
 async function submitForm(btn){
   const sec=btn.closest('.c-form');
   const inputs=sec.querySelectorAll('input,textarea,select');
@@ -857,8 +875,14 @@ async function submitForm(btn){
   const type=inputs[4]?.value||'';const desc=(inputs[5]?.value||'').trim();
   if(!first||!email){btn.textContent='Fill in name & email first';btn.style.background='#dc2626';setTimeout(()=>{btn.innerHTML='Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},2500);return;}
   btn.textContent='Sending…';btn.disabled=true;
-  await _sendEmail({name:first+' '+last,email,phone,project_type:type,description:desc,subject:'New Message from '+first+' '+last});
-  sec.innerHTML='<div style="text-align:center;padding:56px 20px"><div style="font-size:3rem;margin-bottom:16px;color:#16a34a">✓</div><div style="font-family:\'Cormorant Garant\',serif;font-size:1.9rem;font-weight:300;color:#fff;margin-bottom:14px">Message Received!</div><p style="color:rgba(255,255,255,.55);font-size:.9rem;line-height:1.9;max-width:340px;margin:0 auto">Thanks '+first+', we\'ll be in touch within 24 hours.<br><br>Need to reach us directly?<br><a href="mailto:mbelt@dwellingdesign.net" style="color:var(--orange);text-decoration:none">mbelt@dwellingdesign.net</a><br><a href="tel:+12086311362" style="color:var(--orange);text-decoration:none">208-631-1362</a></p></div>';
+  const ok=await _sendEmail({name:first+' '+last,email,phone,project_type:type,description:desc,subject:'New Message from '+first+' '+last});
+  if(ok){
+    sec.innerHTML='<div style="text-align:center;padding:56px 20px"><div style="font-size:3rem;margin-bottom:16px;color:#16a34a">✓</div><div style="font-family:\'Cormorant Garant\',serif;font-size:1.9rem;font-weight:300;color:#fff;margin-bottom:14px">Message Received!</div><p style="color:rgba(255,255,255,.55);font-size:.9rem;line-height:1.9;max-width:340px;margin:0 auto">Thanks '+first+', we\'ll be in touch within 24 hours.<br><br>Need to reach us directly?<br><a href="mailto:mbelt@dwellingdesign.net" style="color:var(--orange);text-decoration:none">mbelt@dwellingdesign.net</a><br><a href="tel:+12086311362" style="color:var(--orange);text-decoration:none">208-631-1362</a></p></div>';
+  }else{
+    btn.textContent='Try Again';btn.disabled=false;btn.style.background='#dc2626';
+    if(!sec.querySelector('.form-fb')){const d=document.createElement('div');d.className='form-fb';d.innerHTML=_FALLBACK;sec.appendChild(d);}
+    setTimeout(()=>{btn.innerHTML='Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},3500);
+  }
 }
 async function submitConsult(btn){
   const box=btn.closest('.cm-box');
@@ -868,8 +892,14 @@ async function submitConsult(btn){
   const type=inputs[4]?.value||'';const desc=(inputs[5]?.value||'').trim();
   if(!first||!email){btn.textContent='Fill in name & email first';btn.style.background='#dc2626';setTimeout(()=>{btn.innerHTML='Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},2500);return;}
   btn.textContent='Sending…';btn.disabled=true;
-  await _sendEmail({name:first+' '+last,email,phone,project_type:type,description:desc,subject:'Consultation Request from '+first+' '+last});
-  box.innerHTML='<div style="text-align:center;padding:48px 20px"><div style="font-size:2.8rem;margin-bottom:14px;color:#16a34a">✓</div><div style="font-family:\'Cormorant Garant\',serif;font-size:1.7rem;font-weight:300;color:#fff;margin-bottom:12px">Request Received!</div><p style="color:rgba(255,255,255,.55);font-size:.88rem;line-height:1.9;max-width:300px;margin:0 auto 24px">Thanks '+first+'! Mike will follow up within 24 hours.<br><br>Direct contact:<br><a href="mailto:mbelt@dwellingdesign.net" style="color:var(--orange);text-decoration:none">mbelt@dwellingdesign.net</a><br><a href="tel:+12086311362" style="color:var(--orange);text-decoration:none">208-631-1362</a></p><button class="btn-p" onclick="closeCM()" style="margin:0 auto">Close</button></div>';
+  const ok=await _sendEmail({name:first+' '+last,email,phone,project_type:type,description:desc,subject:'Consultation Request from '+first+' '+last});
+  if(ok){
+    box.innerHTML='<div style="text-align:center;padding:48px 20px"><div style="font-size:2.8rem;margin-bottom:14px;color:#16a34a">✓</div><div style="font-family:\'Cormorant Garant\',serif;font-size:1.7rem;font-weight:300;color:#fff;margin-bottom:12px">Request Received!</div><p style="color:rgba(255,255,255,.55);font-size:.88rem;line-height:1.9;max-width:300px;margin:0 auto 24px">Thanks '+first+'! Mike will follow up within 24 hours.<br><br>Direct contact:<br><a href="mailto:mbelt@dwellingdesign.net" style="color:var(--orange);text-decoration:none">mbelt@dwellingdesign.net</a><br><a href="tel:+12086311362" style="color:var(--orange);text-decoration:none">208-631-1362</a></p><button class="btn-p" onclick="closeCM()" style="margin:0 auto">Close</button></div>';
+  }else{
+    btn.textContent='Try Again';btn.disabled=false;btn.style.background='#dc2626';
+    if(!box.querySelector('.form-fb')){const d=document.createElement('div');d.className='form-fb';d.innerHTML=_FALLBACK;box.appendChild(d);}
+    setTimeout(()=>{btn.innerHTML='Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},3500);
+  }
 }
 
 // ── MAGNETIC BUTTONS ─────────────────────────────────────
@@ -952,7 +982,10 @@ const faqSchema={
     {"@type":"Question","name":"What is the difference between a building designer and an architect in Idaho?","acceptedAnswer":{"@type":"Answer","text":"In Idaho, residential homes typically do not require a licensed architect by law. A Certified Professional Building Designer (CPD) like Mike Belt holds the industry's highest non-architect credential from the American Institute of Building Design (AIBD) and delivers the same quality design, construction documents, and client experience as an architect — often at more competitive rates for residential projects."}},
     {"@type":"Question","name":"Can Dwelling Design help with remodels and home additions?","acceptedAnswer":{"@type":"Answer","text":"Yes. Dwelling Design provides full design services for home remodels, additions, and ADUs (accessory dwelling units) in Boise and throughout Idaho. Services include architectural drawings, construction documents, structural coordination, and 3D renderings to visualize the finished project before breaking ground."}},
     {"@type":"Question","name":"How much does it cost to hire a custom home designer in Idaho?","acceptedAnswer":{"@type":"Answer","text":"Custom home design fees vary by project size and scope. Dwelling Design offers competitive rates for full-service residential design — typically a percentage of construction cost or a flat project fee. Services include floor plans, elevations, site plans, and permit-ready construction documents. Contact us for a free consultation and fee estimate tailored to your project."}},
-    {"@type":"Question","name":"What is an AIBD Certified Professional Building Designer?","acceptedAnswer":{"@type":"Answer","text":"The AIBD (American Institute of Building Design) Certified Professional Building Designer (CPD) credential is the highest designation for residential building designers in the United States. It requires extensive design experience, passing a national exam, and ongoing continuing education. Mike Belt holds this certification, meaning you receive the same professional accountability and design excellence as a licensed architect — specifically for residential projects in Idaho and the Mountain West."}}
+    {"@type":"Question","name":"What is an AIBD Certified Professional Building Designer?","acceptedAnswer":{"@type":"Answer","text":"The AIBD (American Institute of Building Design) Certified Professional Building Designer (CPD) credential is the highest designation for residential building designers in the United States. It requires extensive design experience, passing a national exam, and ongoing continuing education. Mike Belt holds this certification, meaning you receive the same professional accountability and design excellence as a licensed architect — specifically for residential projects in Idaho and the Mountain West."}},
+    {"@type":"Question","name":"Can you design a home in the Whitetail Club or on Payette Lake?","acceptedAnswer":{"@type":"Answer","text":"Yes — Dwelling Design has designed multiple luxury residences in the Whitetail Club and on Payette Lake. Mike Belt's mountain modern design aesthetic was built for these settings: expansive glazing that frames lake and mountain views, natural stone and timber detailing, and floor plans that connect indoor and outdoor living. If you're building in McCall, Cascade, or Valley County, Dwelling Design is the designer of choice for high-performance mountain homes."}},
+    {"@type":"Question","name":"Do you provide architectural renderings in Boise or McCall, Idaho?","acceptedAnswer":{"@type":"Answer","text":"Yes — photorealistic 3D architectural renderings are a core service at Dwelling Design. Before a single shovel breaks ground, we produce high-quality exterior renderings that show your home's final appearance in context with its site. This is especially valuable for mountain properties where siting, views, and massing are critical. First-time clients often receive complimentary renderings as part of their custom home design package. We serve clients in Boise, McCall, Treasure Valley, Sun Valley, and throughout Idaho."}},
+    {"@type":"Question","name":"Can Dwelling Design help me get permits for my new home in Idaho?","acceptedAnswer":{"@type":"Answer","text":"Yes. Dwelling Design produces complete permit-ready construction document packages accepted by building departments throughout Idaho, including Ada County, Valley County, Boise City, and smaller mountain communities. As an AIBD Certified Professional Building Designer, Mike Belt can sign and submit residential construction documents for permitting in Idaho. We're familiar with local code requirements across Boise, McCall, Eagle, Meridian, Nampa, and surrounding areas."}}
   ]
 };
 const faqSd=document.createElement('script');faqSd.type='application/ld+json';faqSd.textContent=JSON.stringify(faqSchema);document.head.appendChild(faqSd);

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Custom Home Designer Boise & McCall Idaho | Dwelling Design | AIBD Certified</title>
-<meta name="description" content="Idaho's premier custom home designer. Mountain modern homes, remodels, ADUs & renderings in Boise, McCall & Treasure Valley. AIBD Certified, 25+ years experience. Free consultation — call 208-631-1362.">
+<meta name="description" content="Mike Belt — AIBD Certified custom home designer in Boise & McCall, Idaho. Mountain modern homes, remodels, ADUs & photorealistic renderings across the Treasure Valley. 25+ years experience. Call 208-631-1362 for a free consultation.">
 <meta name="keywords" content="custom home designer Boise Idaho, residential building designer Boise, mountain modern architect Idaho, McCall Idaho home designer, Treasure Valley home designer, custom home design Boise Idaho, luxury home designer Boise, ADU designer Boise Idaho, home remodel designer Boise, architectural designer Idaho, AIBD certified designer Idaho, building designer Boise, custom home plans Idaho, home addition designer Boise, Payette Lake home design, mountain modern home design Idaho, residential designer Boise Idaho, new home designer McCall, architectural renderings Idaho, home design Treasure Valley, site planning Idaho, construction documents Boise, custom home design McCall Idaho, mountain home designer Idaho, Boise residential architect, Idaho building designer, home architect Boise Idaho, custom floor plans Idaho, luxury home design Boise, Cascade Idaho home designer, Donnelly Idaho home design, Valley County home designer, Ada County building designer, home design consultant Idaho">
 <meta name="geo.region" content="US-ID">
 <meta name="geo.placename" content="Boise, Idaho">
@@ -20,6 +20,7 @@
 <link rel="icon" href="images/logo-color.png" type="image/png">
 <link rel="apple-touch-icon" href="images/logo-color.png">
 <link rel="canonical" href="https://www.dwellingdesign.net/">
+<link rel="preload" as="image" href="images/wmr3.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
@@ -650,15 +651,19 @@ footer{background:#080d15;padding:60px 48px 28px;border-top:1px solid var(--glas
       <div class="c-det rv d3"><div class="c-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="c-lbl">Email</div><div class="c-val"><a href="mailto:mbelt@dwellingdesign.net" style="color:rgba(255,255,255,.82);text-decoration:none">mbelt@dwellingdesign.net</a></div></div></div>
       <div class="c-det rv d4"><div class="c-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 010 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><div class="c-lbl">Phone</div><div class="c-val"><a href="tel:+12086311362" style="color:rgba(255,255,255,.82);text-decoration:none">208-631-1362</a></div></div></div>
     </div>
-    <div class="c-form rv-r">
-      <div class="f-row"><div class="fg"><label>First Name</label><input type="text" placeholder="John"></div><div class="fg"><label>Last Name</label><input type="text" placeholder="Smith"></div></div>
-      <div class="fg"><label>Email</label><input type="email" placeholder="john@example.com"></div>
-      <div class="fg"><label>Phone</label><input type="tel" placeholder="(208) 000-0000"></div>
-      <div class="fg"><label>Project Type</label><select><option value="">Select a service…</option><option>Custom Home Design</option><option>Remodel / Addition</option><option>Site Planning</option><option>Interior Planning</option><option>Architectural Rendering</option><option>Construction Management</option></select></div>
-      <div class="fg"><label>Project Description</label><textarea placeholder="Describe your vision, timeline, and any key details…"></textarea></div>
-      <button class="btn-p mag" style="justify-content:center;width:100%" onclick="submitForm(this)">Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    <form class="c-form rv-r" method="POST" action="https://formsubmit.co/mbelt@dwellingdesign.net">
+      <input type="hidden" name="_next" value="https://www.dwellingdesign.net/?sent=1">
+      <input type="hidden" name="_subject" value="New Message — Dwelling Design Website">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <div class="f-row"><div class="fg"><label>First Name</label><input type="text" name="first_name" placeholder="John" required></div><div class="fg"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith"></div></div>
+      <div class="fg"><label>Email</label><input type="email" name="email" placeholder="john@example.com" required></div>
+      <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="(208) 000-0000"></div>
+      <div class="fg"><label>Project Type</label><select name="project_type"><option value="">Select a service…</option><option>Custom Home Design</option><option>Remodel / Addition</option><option>Site Planning</option><option>Interior Planning</option><option>Architectural Rendering</option><option>Construction Management</option></select></div>
+      <div class="fg"><label>Project Description</label><textarea name="description" placeholder="Describe your vision, timeline, and any key details…"></textarea></div>
+      <button type="submit" class="btn-p mag" style="justify-content:center;width:100%">Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       <p style="text-align:center;font-size:.72rem;color:rgba(255,255,255,.3);margin-top:10px">Or reach us directly: <a href="mailto:mbelt@dwellingdesign.net" style="color:var(--orange);text-decoration:none">mbelt@dwellingdesign.net</a> &middot; <a href="tel:+12086311362" style="color:var(--orange);text-decoration:none">208-631-1362</a></p>
-    </div>
+    </form>
   </div>
 </section>
 
@@ -699,15 +704,19 @@ footer{background:#080d15;padding:60px 48px 28px;border-top:1px solid var(--glas
     <button class="cm-x" onclick="closeCM()">✕</button>
     <h2>Free Consultation</h2>
     <p>Tell us about your project and we'll reach out within 24 hours.</p>
-    <div style="display:flex;flex-direction:column;gap:16px">
-      <div class="f-row"><div class="fg"><label>First Name</label><input type="text" placeholder="John"></div><div class="fg"><label>Last Name</label><input type="text" placeholder="Smith"></div></div>
-      <div class="fg"><label>Email</label><input type="email" placeholder="john@example.com"></div>
-      <div class="fg"><label>Phone</label><input type="tel" placeholder="(208) 000-0000"></div>
-      <div class="fg"><label>Project Type</label><select><option>Custom Home Design</option><option>Remodel / Addition</option><option>Site Planning</option><option>Rendering</option><option>Other</option></select></div>
-      <div class="fg"><label>Project Description</label><textarea placeholder="Tell us about your vision…" style="min-height:90px"></textarea></div>
-      <button class="btn-p mag" style="justify-content:center" onclick="submitConsult(this)">Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    <form style="display:flex;flex-direction:column;gap:16px" method="POST" action="https://formsubmit.co/mbelt@dwellingdesign.net">
+      <input type="hidden" name="_next" value="https://www.dwellingdesign.net/?sent=1">
+      <input type="hidden" name="_subject" value="Consultation Request — Dwelling Design Website">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <div class="f-row"><div class="fg"><label>First Name</label><input type="text" name="first_name" placeholder="John" required></div><div class="fg"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith"></div></div>
+      <div class="fg"><label>Email</label><input type="email" name="email" placeholder="john@example.com" required></div>
+      <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="(208) 000-0000"></div>
+      <div class="fg"><label>Project Type</label><select name="project_type"><option>Custom Home Design</option><option>Remodel / Addition</option><option>Site Planning</option><option>Rendering</option><option>Other</option></select></div>
+      <div class="fg"><label>Project Description</label><textarea name="description" placeholder="Tell us about your vision…" style="min-height:90px"></textarea></div>
+      <button type="submit" class="btn-p mag" style="justify-content:center">Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       <p style="text-align:center;font-size:.72rem;color:rgba(255,255,255,.3);margin-top:10px">Or email: <a href="mailto:mbelt@dwellingdesign.net" style="color:var(--orange);text-decoration:none">mbelt@dwellingdesign.net</a> &middot; <a href="tel:+12086311362" style="color:var(--orange);text-decoration:none">208-631-1362</a></p>
-    </div>
+    </form>
   </div>
 </div>
 
@@ -1012,6 +1021,16 @@ const faqSchema={
   ]
 };
 const faqSd=document.createElement('script');faqSd.type='application/ld+json';faqSd.textContent=JSON.stringify(faqSchema);document.head.appendChild(faqSd);
+
+// ── SENT CONFIRMATION BANNER ─────────────────────────────
+if(new URLSearchParams(location.search).get('sent')==='1'){
+  const b=document.createElement('div');
+  b.style.cssText='position:fixed;top:80px;left:50%;transform:translateX(-50%);z-index:9999;background:#16a34a;color:#fff;padding:14px 28px;font-size:.85rem;letter-spacing:.05em;box-shadow:0 8px 32px rgba(0,0,0,.25);border-radius:2px;white-space:nowrap';
+  b.innerHTML='<strong>✓ Message sent!</strong> Mike will be in touch within 24 hours.';
+  document.body.appendChild(b);
+  setTimeout(()=>{b.style.transition='opacity .6s';b.style.opacity='0';setTimeout(()=>b.remove(),600);},6000);
+  history.replaceState(null,'',location.pathname);
+}
 
 // ── SMOOTH SCROLL ────────────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(a=>{

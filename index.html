@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dwelling Design | Custom Home Design & Architecture — Boise & McCall, Idaho</title>
 <meta name="description" content="Dwelling Design — Idaho's premier custom home designer. Mountain modern homes, remodels, ADUs & renderings in Boise, McCall & Treasure Valley. AIBD Certified building designer with 25+ years experience. Call 208-631-1362.">
-<meta name="keywords" content="custom home designer Boise Idaho, residential building designer Boise, mountain modern architect Idaho, McCall Idaho home designer, Treasure Valley home designer, custom home design Boise Idaho, luxury home designer Boise, ADU designer Boise Idaho, home remodel designer Boise, architectural designer Idaho, AIBD certified designer Idaho, building designer Boise, custom home plans Idaho, home addition designer Boise, Payette Lake home design, mountain modern home design Idaho, residential designer Boise Idaho, new home designer McCall, architectural renderings Idaho, home design Treasure Valley, site planning Idaho, construction documents Boise">
+<meta name="keywords" content="custom home designer Boise Idaho, residential building designer Boise, mountain modern architect Idaho, McCall Idaho home designer, Treasure Valley home designer, custom home design Boise Idaho, luxury home designer Boise, ADU designer Boise Idaho, home remodel designer Boise, architectural designer Idaho, AIBD certified designer Idaho, building designer Boise, custom home plans Idaho, home addition designer Boise, Payette Lake home design, mountain modern home design Idaho, residential designer Boise Idaho, new home designer McCall, architectural renderings Idaho, home design Treasure Valley, site planning Idaho, construction documents Boise, custom home design McCall Idaho, mountain home designer Idaho, Boise residential architect, Idaho building designer, home architect Boise Idaho, custom floor plans Idaho, luxury home design Boise, Cascade Idaho home designer, Donnelly Idaho home design, Valley County home designer, Ada County building designer, home design consultant Idaho">
 <meta name="geo.region" content="US-ID">
 <meta name="geo.placename" content="Boise, Idaho">
 <meta property="og:type" content="website">
@@ -732,29 +732,28 @@ S('cm').addEventListener('click',e=>{if(e.target===S('cm'))closeCM();});
 // Confirmed working: direct URL returns {"success":true} and shows in execution log.
 const GAS_URL='https://script.google.com/macros/s/AKfycbzFGXJNYjtryGLsLcYnlEX-wreg-z8pLccwxHF-bXIsY7RpcIgNUkNACFk53hAQqkGL/exec';
 function _sendEmail(payload){
-  new Image().src=GAS_URL+'?'+new URLSearchParams(payload)+'&t='+Date.now();
+  // Use fetch with no-cors to fire the GAS request without CORS issues
+  fetch(GAS_URL+'?'+new URLSearchParams(payload)+'&t='+Date.now(),{mode:'no-cors'}).catch(()=>{});
 }
 function submitForm(btn){
-  const sec=btn.closest('.c-form')||btn.closest('section');
+  const sec=btn.closest('.c-form');
   const inputs=sec.querySelectorAll('input,textarea,select');
-  const first=inputs[0]?.value||'';const last=inputs[1]?.value||'';
-  const email=inputs[2]?.value||'';const phone=inputs[3]?.value||'';
-  const type=inputs[4]?.value||'';const desc=inputs[5]?.value||'';
+  const first=(inputs[0]?.value||'').trim();const last=(inputs[1]?.value||'').trim();
+  const email=(inputs[2]?.value||'').trim();const phone=(inputs[3]?.value||'').trim();
+  const type=inputs[4]?.value||'';const desc=(inputs[5]?.value||'').trim();
   if(!first||!email){btn.textContent='Fill in name & email first';btn.style.background='#dc2626';setTimeout(()=>{btn.innerHTML='Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},2500);return;}
   _sendEmail({name:first+' '+last,email,phone,project_type:type,description:desc,subject:'New Message from '+first+' '+last});
-  btn.textContent='Message Sent! ✓';btn.style.background='#16a34a';
-  setTimeout(()=>{btn.innerHTML='Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},3000);
+  sec.innerHTML='<div style="text-align:center;padding:56px 20px"><div style="font-size:3rem;margin-bottom:16px;color:#16a34a">✓</div><div style="font-family:\'Cormorant Garant\',serif;font-size:1.9rem;font-weight:300;color:#fff;margin-bottom:14px">Message Received!</div><p style="color:rgba(255,255,255,.55);font-size:.9rem;line-height:1.9;max-width:340px;margin:0 auto">Thanks '+first+', we\'ll be in touch within 24 hours.<br><br>Need to reach us directly?<br><a href="mailto:mbelt@dwellingdesign.net" style="color:var(--orange);text-decoration:none">mbelt@dwellingdesign.net</a><br><a href="tel:+12086311362" style="color:var(--orange);text-decoration:none">208-631-1362</a></p></div>';
 }
 function submitConsult(btn){
   const box=btn.closest('.cm-box');
   const inputs=box.querySelectorAll('input,textarea,select');
-  const first=inputs[0]?.value||'';const last=inputs[1]?.value||'';
-  const email=inputs[2]?.value||'';const phone=inputs[3]?.value||'';
-  const type=inputs[4]?.value||'';const desc=inputs[5]?.value||'';
+  const first=(inputs[0]?.value||'').trim();const last=(inputs[1]?.value||'').trim();
+  const email=(inputs[2]?.value||'').trim();const phone=(inputs[3]?.value||'').trim();
+  const type=inputs[4]?.value||'';const desc=(inputs[5]?.value||'').trim();
   if(!first||!email){btn.textContent='Fill in name & email first';btn.style.background='#dc2626';setTimeout(()=>{btn.innerHTML='Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},2500);return;}
   _sendEmail({name:first+' '+last,email,phone,project_type:type,description:desc,subject:'Consultation Request from '+first+' '+last});
-  btn.textContent='Request Sent! ✓';btn.style.background='#16a34a';
-  setTimeout(()=>{closeCM();btn.innerHTML='Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},2500);
+  box.innerHTML='<div style="text-align:center;padding:48px 20px"><div style="font-size:2.8rem;margin-bottom:14px;color:#16a34a">✓</div><div style="font-family:\'Cormorant Garant\',serif;font-size:1.7rem;font-weight:300;color:#fff;margin-bottom:12px">Request Received!</div><p style="color:rgba(255,255,255,.55);font-size:.88rem;line-height:1.9;max-width:300px;margin:0 auto 24px">Thanks '+first+'! Mike will follow up within 24 hours.<br><br>Direct contact:<br><a href="mailto:mbelt@dwellingdesign.net" style="color:var(--orange);text-decoration:none">mbelt@dwellingdesign.net</a><br><a href="tel:+12086311362" style="color:var(--orange);text-decoration:none">208-631-1362</a></p><button class="btn-p" onclick="closeCM()" style="margin:0 auto">Close</button></div>';
 }
 
 // ── MAGNETIC BUTTONS ─────────────────────────────────────
@@ -803,6 +802,22 @@ const schema={
   ]
 };
 const sd=document.createElement('script');sd.type='application/ld+json';sd.textContent=JSON.stringify(schema);document.head.appendChild(sd);
+
+// ── FAQ SCHEMA ────────────────────────────────────────────
+const faqSchema={
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What is a professional building designer?","acceptedAnswer":{"@type":"Answer","text":"A professional building designer, like an AIBD Certified designer, creates custom home plans, construction documents, and architectural drawings. Mike Belt at Dwelling Design has 25+ years of residential design experience in Idaho, offering the same services as an architect for residential projects at competitive rates."}},
+    {"@type":"Question","name":"How much does custom home design cost in Idaho?","acceptedAnswer":{"@type":"Answer","text":"Custom home design fees in Idaho typically range based on project size and complexity. Dwelling Design offers competitive rates for full custom home design services including floor plans, elevations, construction documents, and 3D renderings. Contact us for a free consultation and project quote."}},
+    {"@type":"Question","name":"Do you design homes in McCall, Idaho?","acceptedAnswer":{"@type":"Answer","text":"Yes, Dwelling Design specializes in mountain modern homes in McCall and the surrounding Payette Lake area. We have designed numerous luxury residences in McCall, including lakefront properties and mountain retreats. We serve all of Central Idaho including McCall, Donnelly, and Cascade."}},
+    {"@type":"Question","name":"What is mountain modern architecture?","acceptedAnswer":{"@type":"Answer","text":"Mountain modern architecture blends natural materials — stone, timber, steel — with clean contemporary lines and expansive glass to frame mountain views. Dwelling Design's 'Mountaintop Modern' style creates homes that feel rooted in Idaho's landscape while offering the open, light-filled spaces of contemporary design."}},
+    {"@type":"Question","name":"Can you design an ADU (Accessory Dwelling Unit) in Boise?","acceptedAnswer":{"@type":"Answer","text":"Yes, Dwelling Design provides full ADU design services in Boise and throughout the Treasure Valley. We handle all plans, construction documents, and permit-ready drawings for detached ADUs, garage conversions, and basement ADUs. Idaho's ADU regulations have expanded significantly, and we'll guide you through the process."}},
+    {"@type":"Question","name":"Do I need an architect or a building designer for a custom home in Idaho?","acceptedAnswer":{"@type":"Answer","text":"In Idaho, most custom residential homes do not require a licensed architect — an AIBD Certified Professional Building Designer like Mike Belt can provide all the design services and construction documents you need. Mike has designed hundreds of homes across Idaho with the same quality and expertise as a licensed architect."}},
+    {"@type":"Question","name":"How long does the custom home design process take?","acceptedAnswer":{"@type":"Answer","text":"A typical custom home design project with Dwelling Design takes 2–4 months from initial concept through permit-ready construction documents, depending on project complexity and revision cycles. Architectural renderings can be produced in as little as a few weeks for simpler projects."}}
+  ]
+};
+const faqSd=document.createElement('script');faqSd.type='application/ld+json';faqSd.textContent=JSON.stringify(faqSchema);document.head.appendChild(faqSd);
 
 // ── SMOOTH SCROLL ────────────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(a=>{

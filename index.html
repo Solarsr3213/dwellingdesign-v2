@@ -305,6 +305,14 @@ footer{background:#080d15;padding:60px 48px 28px;border-top:1px solid var(--glas
 .rv-l{opacity:0;transform:translateX(-44px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .rv-r{opacity:0;transform:translateX(44px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .rv.vis,.rv-l.vis,.rv-r.vis{opacity:1;transform:none}
+/* FAQ */
+.faq-item{background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(10px);margin-bottom:2px;overflow:hidden}
+.faq-item summary{padding:22px 28px;cursor:pointer;font-size:.88rem;letter-spacing:.04em;color:rgba(255,255,255,.85);list-style:none;display:flex;justify-content:space-between;align-items:center;font-weight:400;gap:20px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item[open] summary{color:var(--orange)}
+.faq-item .faq-ans{padding:0 28px 22px;font-size:.85rem;line-height:1.9;color:rgba(255,255,255,.5);font-weight:300}
+.faq-item summary::after{content:'+';font-size:1.4rem;color:var(--orange);flex-shrink:0;line-height:1}
+.faq-item[open] summary::after{content:'−'}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
 /* MOBILE NAV */
@@ -361,9 +369,9 @@ footer{background:#080d15;padding:60px 48px 28px;border-top:1px solid var(--glas
   <div class="hero-overlay"></div>
   <canvas id="ptcl"></canvas>
   <div class="hc">
-    <div class="h-tag" id="htag">Idaho's Premier Design Studio</div>
+    <div class="h-tag" id="htag">Custom Home Designer — Boise &amp; McCall, Idaho</div>
     <h1 class="h-h1" id="hh1">Design <em>Made Real</em></h1>
-    <p class="h-sub" id="hsub">From custom homes and ADUs to photorealistic renderings, we work alongside you from day one to occupancy — bringing your vision to life with 25+ years of proven expertise.</p>
+    <p class="h-sub" id="hsub">Custom home design in Boise, McCall, and throughout Idaho — from initial concept through permit-ready construction documents. AIBD Certified, 25+ years of proven expertise.</p>
     <div class="h-acts" id="hacts">
       <a href="#portfolio" class="btn-p mag">
         View Portfolio
@@ -385,7 +393,7 @@ footer{background:#080d15;padding:60px 48px 28px;border-top:1px solid var(--glas
 <section id="about">
   <div class="about-in">
     <div class="aimg rv-l">
-      <div class="aimg-frame"><img src="images/mike.jpg" alt="Mike Belt"></div>
+      <div class="aimg-frame"><img src="images/mike.jpg" alt="Mike Belt — AIBD Certified Custom Home Designer, Boise Idaho"></div>
       <div class="aimg-acc"></div>
       <div class="aimg-stat"><div class="n" id="ctr1">0</div><div class="l">Years of Excellence</div></div>
     </div>
@@ -493,6 +501,47 @@ footer{background:#080d15;padding:60px 48px 28px;border-top:1px solid var(--glas
   </div>
 </section>
 
+<section id="faq" style="background:var(--navy-light);padding:110px 48px">
+  <div style="max-width:900px;margin:0 auto">
+    <div class="section-label rv" style="justify-content:center">Have Questions?</div>
+    <h2 class="section-title dk rv d1" style="text-align:center;margin-bottom:56px">Frequently Asked Questions</h2>
+    <div style="display:flex;flex-direction:column;gap:2px">
+      <details class="faq-item rv d1">
+        <summary>Who is the best custom home designer near Boise, Idaho?</summary>
+        <p class="faq-ans">Mike Belt at Dwelling Design is one of Boise's most experienced custom home designers, with 25+ years of residential design throughout Idaho. As an AIBD Certified Professional Building Designer — the industry's highest non-architect credential — Mike has designed hundreds of homes across the Treasure Valley, McCall, and Idaho's mountain communities. He is recognized for his mountain modern design sensibility and exceptional client communication from day one to occupancy.</p>
+      </details>
+      <details class="faq-item rv d2">
+        <summary>Do I need an architect or a building designer for a custom home in Idaho?</summary>
+        <p class="faq-ans">For most custom residential homes in Idaho, a licensed architect is not legally required. An AIBD Certified Professional Building Designer like Mike Belt provides the same quality design, complete construction documents, and client experience — often at more competitive rates for residential projects. Mike's AIBD certification is the gold standard credential for building designers in the U.S.</p>
+      </details>
+      <details class="faq-item rv d3">
+        <summary>What does a custom home design package include?</summary>
+        <p class="faq-ans">Dwelling Design's full custom home design packages include floor plans, site plans, exterior elevations, cross sections, foundation plans, electrical layouts, and permit-ready construction documents. First-time clients also receive complimentary photorealistic renderings — exterior 3D visualizations that show your home before a single shovel breaks ground.</p>
+      </details>
+      <details class="faq-item rv d4">
+        <summary>Do you design homes in McCall and mountain Idaho communities?</summary>
+        <p class="faq-ans">Yes — McCall and Idaho's mountain communities are a specialty. Dwelling Design has designed numerous luxury residences on Payette Lake, in Whitetail Club, and throughout Valley County. Our mountain modern and mountaintop modern design style is specifically suited to Idaho's terrain, maximizing views, natural light, and connection to the landscape.</p>
+      </details>
+      <details class="faq-item rv">
+        <summary>Can you design an ADU (Accessory Dwelling Unit) in Boise or the Treasure Valley?</summary>
+        <p class="faq-ans">Yes. Dwelling Design provides complete ADU design services throughout Boise, Meridian, Eagle, Nampa, and the Treasure Valley. We handle permit-ready plans for detached guest houses, garage conversions, and basement ADUs. Idaho's ADU regulations have expanded significantly, and we'll guide you through design and permitting from start to finish.</p>
+      </details>
+      <details class="faq-item rv d1">
+        <summary>What is mountain modern architecture?</summary>
+        <p class="faq-ans">Mountain modern architecture blends natural materials — stone, timber, steel — with clean contemporary lines and expansive glass to frame views. Dwelling Design's "Mountaintop Modern" aesthetic creates homes that feel rooted in Idaho's landscape while offering the open, light-filled spaces of contemporary design. Projects like Whitetail Migratory Ridge and Whitetail Drive exemplify this style.</p>
+      </details>
+      <details class="faq-item rv d2">
+        <summary>How long does the custom home design process take?</summary>
+        <p class="faq-ans">A typical custom home design project takes 2–4 months from initial concept through permit-ready construction documents, depending on project size and complexity. Renderings can often be completed in a few weeks. Remodels and additions are typically faster. We establish a clear timeline during your free initial consultation.</p>
+      </details>
+      <details class="faq-item rv d3">
+        <summary>What areas do you serve in Idaho?</summary>
+        <p class="faq-ans">Dwelling Design serves all of Idaho, with primary focus on Boise, the Treasure Valley (Meridian, Nampa, Eagle, Star, Kuna, Caldwell), McCall, Donnelly, Cascade, Valley County, and Sun Valley / Ketchum. We also work with clients building vacation and second homes throughout Idaho's mountain communities and beyond.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <div class="cta-band">
   <div class="section-label rv" style="justify-content:center">Begin Your Project</div>
   <h2 class="section-title rv d1">Ready to Build Something <em style="font-style:italic;color:var(--orange)">Extraordinary?</em></h2>
@@ -519,6 +568,7 @@ footer{background:#080d15;padding:60px 48px 28px;border-top:1px solid var(--glas
       <div class="fg"><label>Project Type</label><select><option value="">Select a service…</option><option>Custom Home Design</option><option>Remodel / Addition</option><option>Site Planning</option><option>Interior Planning</option><option>Architectural Rendering</option><option>Construction Management</option></select></div>
       <div class="fg"><label>Project Description</label><textarea placeholder="Describe your vision, timeline, and any key details…"></textarea></div>
       <button class="btn-p mag" style="justify-content:center;width:100%" onclick="submitForm(this)">Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      <p style="text-align:center;font-size:.72rem;color:rgba(255,255,255,.3);margin-top:10px">Or reach us directly: <a href="mailto:mbelt@dwellingdesign.net" style="color:var(--orange);text-decoration:none">mbelt@dwellingdesign.net</a> &middot; <a href="tel:+12086311362" style="color:var(--orange);text-decoration:none">208-631-1362</a></p>
     </div>
   </div>
 </section>
@@ -567,6 +617,7 @@ footer{background:#080d15;padding:60px 48px 28px;border-top:1px solid var(--glas
       <div class="fg"><label>Project Type</label><select><option>Custom Home Design</option><option>Remodel / Addition</option><option>Site Planning</option><option>Rendering</option><option>Other</option></select></div>
       <div class="fg"><label>Project Description</label><textarea placeholder="Tell us about your vision…" style="min-height:90px"></textarea></div>
       <button class="btn-p mag" style="justify-content:center" onclick="submitConsult(this)">Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      <p style="text-align:center;font-size:.72rem;color:rgba(255,255,255,.3);margin-top:10px">Or email: <a href="mailto:mbelt@dwellingdesign.net" style="color:var(--orange);text-decoration:none">mbelt@dwellingdesign.net</a> &middot; <a href="tel:+12086311362" style="color:var(--orange);text-decoration:none">208-631-1362</a></p>
     </div>
   </div>
 </div>

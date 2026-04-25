@@ -9,17 +9,17 @@
 <meta name="geo.region" content="US-ID">
 <meta name="geo.placename" content="Boise, Idaho">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://solarsr3213.github.io/dwellingdesign-v2/">
+<meta property="og:url" content="https://www.dwellingdesign.net/">
 <meta property="og:title" content="Dwelling Design | Custom Home Design & Architecture — Idaho">
 <meta property="og:description" content="25+ years of architectural design excellence. Custom homes, remodels, ADUs & renderings across Boise, McCall & Treasure Valley. AIBD Certified Professional Building Designer.">
-<meta property="og:image" content="https://solarsr3213.github.io/dwellingdesign-v2/images/wmr3.jpg">
+<meta property="og:image" content="https://www.dwellingdesign.net/images/wmr3.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Dwelling Design | Custom Home Design — Idaho">
 <meta name="twitter:description" content="AIBD Certified architectural design firm. Custom homes, ADUs & renderings in Boise & McCall, Idaho.">
-<meta name="twitter:image" content="https://solarsr3213.github.io/dwellingdesign-v2/images/wmr3.jpg">
+<meta name="twitter:image" content="https://www.dwellingdesign.net/images/wmr3.jpg">
 <link rel="icon" href="images/logo-color.png" type="image/png">
 <link rel="apple-touch-icon" href="images/logo-color.png">
-<link rel="canonical" href="https://solarsr3213.github.io/dwellingdesign-v2/">
+<link rel="canonical" href="https://www.dwellingdesign.net/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
@@ -881,7 +881,10 @@ async function _sendEmail(payload){
     return data.success==='true'||data.success===true;
   }catch(e){return false;}
 }
-const _FALLBACK='<p style="margin-top:14px;font-size:.82rem;color:rgba(255,255,255,.45);text-align:center">Trouble sending? Email directly: <a href="mailto:mbelt@dwellingdesign.net" style="color:var(--orange)">mbelt@dwellingdesign.net</a> or call <a href="tel:+12086311362" style="color:var(--orange)">208-631-1362</a></p>';
+function _mailtoLink(name,email,phone,type,desc,subj){
+  const body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\nPhone: '+(phone||'N/A')+'\nProject Type: '+(type||'N/A')+'\n\nDescription:\n'+(desc||''));
+  return 'mailto:mbelt@dwellingdesign.net?subject='+encodeURIComponent(subj)+'&body='+body;
+}
 async function submitForm(btn){
   const sec=btn.closest('.c-form');
   const inputs=sec.querySelectorAll('input,textarea,select');
@@ -894,9 +897,10 @@ async function submitForm(btn){
   if(ok){
     sec.innerHTML='<div style="text-align:center;padding:56px 20px"><div style="font-size:3rem;margin-bottom:16px;color:#16a34a">✓</div><div style="font-family:\'Cormorant Garant\',serif;font-size:1.9rem;font-weight:300;color:#fff;margin-bottom:14px">Message Received!</div><p style="color:rgba(255,255,255,.55);font-size:.9rem;line-height:1.9;max-width:340px;margin:0 auto">Thanks '+first+', we\'ll be in touch within 24 hours.<br><br>Need to reach us directly?<br><a href="mailto:mbelt@dwellingdesign.net" style="color:var(--orange);text-decoration:none">mbelt@dwellingdesign.net</a><br><a href="tel:+12086311362" style="color:var(--orange);text-decoration:none">208-631-1362</a></p></div>';
   }else{
-    btn.textContent='Try Again';btn.disabled=false;btn.style.background='#dc2626';
-    if(!sec.querySelector('.form-fb')){const d=document.createElement('div');d.className='form-fb';d.innerHTML=_FALLBACK;sec.appendChild(d);}
-    setTimeout(()=>{btn.innerHTML='Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},3500);
+    const mailto=_mailtoLink(first+' '+last,email,phone,type,desc,'New Message from '+first+' '+last);
+    btn.innerHTML='Send via Email App <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+    btn.disabled=false;btn.style.background='#dc2626';btn.onclick=()=>window.open(mailto,'_self');
+    if(!sec.querySelector('.form-fb')){const d=document.createElement('div');d.className='form-fb';d.innerHTML='<p style="margin-top:14px;font-size:.82rem;color:rgba(255,255,255,.5);text-align:center">Form submission failed. Click above to send via your email app, or call <a href="tel:+12086311362" style="color:var(--orange)">208-631-1362</a></p>';sec.appendChild(d);}
   }
 }
 async function submitConsult(btn){
@@ -911,9 +915,10 @@ async function submitConsult(btn){
   if(ok){
     box.innerHTML='<div style="text-align:center;padding:48px 20px"><div style="font-size:2.8rem;margin-bottom:14px;color:#16a34a">✓</div><div style="font-family:\'Cormorant Garant\',serif;font-size:1.7rem;font-weight:300;color:#fff;margin-bottom:12px">Request Received!</div><p style="color:rgba(255,255,255,.55);font-size:.88rem;line-height:1.9;max-width:300px;margin:0 auto 24px">Thanks '+first+'! Mike will follow up within 24 hours.<br><br>Direct contact:<br><a href="mailto:mbelt@dwellingdesign.net" style="color:var(--orange);text-decoration:none">mbelt@dwellingdesign.net</a><br><a href="tel:+12086311362" style="color:var(--orange);text-decoration:none">208-631-1362</a></p><button class="btn-p" onclick="closeCM()" style="margin:0 auto">Close</button></div>';
   }else{
-    btn.textContent='Try Again';btn.disabled=false;btn.style.background='#dc2626';
-    if(!box.querySelector('.form-fb')){const d=document.createElement('div');d.className='form-fb';d.innerHTML=_FALLBACK;box.appendChild(d);}
-    setTimeout(()=>{btn.innerHTML='Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},3500);
+    const mailto=_mailtoLink(first+' '+last,email,phone,type,desc,'Consultation Request from '+first+' '+last);
+    btn.innerHTML='Send via Email App <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+    btn.disabled=false;btn.style.background='#dc2626';btn.onclick=()=>window.open(mailto,'_self');
+    if(!box.querySelector('.form-fb')){const d=document.createElement('div');d.className='form-fb';d.innerHTML='<p style="margin-top:14px;font-size:.82rem;color:rgba(255,255,255,.5);text-align:center">Form submission failed. Click above to send via your email app, or call <a href="tel:+12086311362" style="color:var(--orange)">208-631-1362</a></p>';box.appendChild(d);}
   }
 }
 
@@ -936,10 +941,10 @@ S('yr').textContent=new Date().getFullYear();
 const schema={
   "@context":"https://schema.org",
   "@type":["LocalBusiness","ProfessionalService","HomeAndConstructionBusiness"],
-  "@id":"https://solarsr3213.github.io/dwellingdesign-v2/",
+  "@id":"https://www.dwellingdesign.net/",
   "name":"Dwelling Design",
   "description":"AIBD Certified Professional Building Designer with 25+ years experience offering custom home design, mountain modern architecture, ADU design, remodels, site planning, and photorealistic renderings in Boise, McCall, and Treasure Valley, Idaho.",
-  "url":"https://solarsr3213.github.io/dwellingdesign-v2/",
+  "url":"https://www.dwellingdesign.net/",
   "email":"mbelt@dwellingdesign.net",
   "telephone":"+1-208-631-1362",
   "address":{"@type":"PostalAddress","addressLocality":"Boise","addressRegion":"ID","addressCountry":"US"},
@@ -967,7 +972,7 @@ const schema={
   "sameAs":["https://www.facebook.com/profile.php?id=61577562383035","http://linkedin.com/company/dwelling-design-llc","http://www.dwellingdesign.net"],
   "hasCredential":"AIBD Certified Professional Building Designer",
   "foundingDate":"2000",
-  "image":"https://solarsr3213.github.io/dwellingdesign-v2/images/wmr3.jpg",
+  "image":"https://www.dwellingdesign.net/images/wmr3.jpg",
   "priceRange":"$$$$",
   "knowsAbout":["Custom Home Design","Mountain Modern Architecture","ADU Design","Home Remodel","Site Planning","Architectural Renderings","Construction Management","Residential Building Design","Home Addition Design","Payette Lake Home Design","McCall Idaho Home Design","Boise Custom Home Design","Treasure Valley Home Design","Mountain Modern Home Plans"],
   "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"4","bestRating":"5"},

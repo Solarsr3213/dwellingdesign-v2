@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dwelling Design | Custom Home Design & Architecture — Boise & McCall, Idaho</title>
 <meta name="description" content="Dwelling Design — Idaho's premier architectural design firm. Custom homes, remodels, ADUs, and photorealistic renderings. Serving Boise, McCall & Treasure Valley. AIBD Certified. 25+ years experience.">
-<meta name="keywords" content="custom home design Idaho, architectural design Boise, McCall architect, ADU design Idaho, home remodel Boise, architectural renderings Idaho, AIBD designer">
+<meta name="keywords" content="custom home design Idaho, luxury home architect Boise, McCall Idaho architect, mountain modern home design, ADU design Idaho, home remodel Boise, architectural renderings Idaho, AIBD certified designer, Treasure Valley architect, residential designer Idaho, Payette Lake home design, mountain modern architect, custom home builder Boise Idaho, home designer McCall Idaho, architectural designer Treasure Valley">
 <meta name="geo.region" content="US-ID">
 <meta name="geo.placename" content="Boise, Idaho">
 <meta property="og:type" content="website">
@@ -234,7 +234,7 @@ nav.sc{background:rgba(17,24,39,.9);backdrop-filter:blur(20px);padding:14px 48px
 
 /* TESTIMONIALS */
 #testimonials{background:var(--cream-light);padding:110px 48px}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:60px;max-width:1400px;margin-left:auto;margin-right:auto}
+.testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:60px;max-width:1400px;margin-left:auto;margin-right:auto}
 .tcard{background:#fff;padding:44px 36px;border:1px solid rgba(0,0,0,.06);position:relative;overflow:hidden;transition:transform .4s var(--spring),box-shadow .4s}
 .tcard::before{content:'"';position:absolute;top:16px;right:24px;font-family:'Cormorant Garant',serif;font-size:7rem;font-weight:300;color:rgba(224,116,40,.07);line-height:1;pointer-events:none}
 .tcard:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,.1)}
@@ -488,6 +488,7 @@ footer{background:#080d15;padding:60px 48px 28px;border-top:1px solid var(--glas
     <div class="tcard rv d1"><div class="t-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="t-quote">"Mike's drawings were very thorough and complete. All rooms are proportioned well and have good flow. I would not hesitate to use Mike's services again and would strongly encourage others to do the same."</p><div class="t-auth"><div class="t-av">N</div><div><div class="t-name">Neil Nelson</div><div class="t-loc">Client</div></div></div></div>
     <div class="tcard rv d2"><div class="t-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="t-quote">"Mike is a very talented designer with the added invaluable asset of his experience working in 'the field.' He conducts himself and his business with the utmost reliability, professionalism & honesty."</p><div class="t-auth"><div class="t-av">B</div><div><div class="t-name">C. Michael Barker, AIA</div><div class="t-loc">Licensed Architect</div></div></div></div>
     <div class="tcard rv d3"><div class="t-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="t-quote">"Mr. Belt's work exemplifies commitment to integrity. His attention to detail and ingenuity show in all designs — a pleasure to work with on every project."</p><div class="t-auth"><div class="t-av">K</div><div><div class="t-name">Kristian Willman</div><div class="t-loc">General Contractor, Timberline Construction</div></div></div></div>
+    <div class="tcard rv d4"><div class="t-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="t-quote">"Mike brings a rare combination of creativity, technical skill, and responsiveness — designing a custom home that fits our site beautifully while capturing exactly the views and character we wanted. His talent for mountain modern design creates homes with clean lines and thoughtful materials that feel both distinctive and timeless. Truly a pleasure to work with, and we would highly recommend him to anyone seeking a creative, reliable architect with a fantastic mountain modern sensibility."</p><div class="t-auth"><div class="t-av">P</div><div><div class="t-name">Preston Roper</div><div class="t-loc">Client</div></div></div></div>
   </div>
 </section>
 
@@ -725,10 +726,13 @@ function closeCM(){S('cm').classList.remove('open');document.body.style.overflow
 S('cm').addEventListener('click',e=>{if(e.target===S('cm'))closeCM();});
 
 // ── FORMS ────────────────────────────────────────────────
-const GAS_URL='https://script.google.com/macros/s/AKfycbzFGXJNYjtryGLsLcYnlEX-wreg-z8pLccwxHF-bXIsY7RpcIgNUkNACFk53hAQqkGL/exec';
+const FORMSUBMIT_URL='https://formsubmit.co/ajax/mbelt@dwellingdesign.net';
 function _sendEmail(payload){
-  /* no-cors: GAS doesn't return CORS headers, but the POST still executes and email gets sent */
-  fetch(GAS_URL+'?'+new URLSearchParams(payload),{method:'GET',mode:'no-cors'}).catch(()=>{});
+  return fetch(FORMSUBMIT_URL,{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({...payload,_subject:payload.subject,_captcha:'false'})
+  });
 }
 function submitForm(btn){
   const sec=btn.closest('.c-form')||btn.closest('section');
@@ -737,9 +741,11 @@ function submitForm(btn){
   const email=inputs[2]?.value||'';const phone=inputs[3]?.value||'';
   const type=inputs[4]?.value||'';const desc=inputs[5]?.value||'';
   if(!first||!email){btn.textContent='Fill in name & email first';btn.style.background='#dc2626';setTimeout(()=>{btn.innerHTML='Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},2500);return;}
-  _sendEmail({name:first+' '+last,email,phone,project_type:type,description:desc,subject:'New Message from '+first+' '+last});
-  btn.textContent='Message Sent! ✓';btn.style.background='#16a34a';
-  setTimeout(()=>{btn.innerHTML='Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},3000);
+  btn.textContent='Sending…';btn.disabled=true;
+  _sendEmail({name:first+' '+last,email,phone,project_type:type,message:desc,subject:'New Message from '+first+' '+last})
+    .then(r=>r.json())
+    .then(()=>{btn.textContent='Message Sent! ✓';btn.style.background='#16a34a';setTimeout(()=>{btn.innerHTML='Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';btn.disabled=false;},3000);})
+    .catch(()=>{btn.textContent='Error – email mbelt@dwellingdesign.net';btn.style.background='#dc2626';setTimeout(()=>{btn.innerHTML='Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';btn.disabled=false;},4000);});
 }
 function submitConsult(btn){
   const box=btn.closest('.cm-box');
@@ -748,9 +754,11 @@ function submitConsult(btn){
   const email=inputs[2]?.value||'';const phone=inputs[3]?.value||'';
   const type=inputs[4]?.value||'';const desc=inputs[5]?.value||'';
   if(!first||!email){btn.textContent='Fill in name & email first';btn.style.background='#dc2626';setTimeout(()=>{btn.innerHTML='Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},2500);return;}
-  _sendEmail({name:first+' '+last,email,phone,project_type:type,description:desc,subject:'Consultation Request from '+first+' '+last});
-  btn.textContent='Request Sent! ✓';btn.style.background='#16a34a';
-  setTimeout(()=>{closeCM();btn.innerHTML='Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},2500);
+  btn.textContent='Sending…';btn.disabled=true;
+  _sendEmail({name:first+' '+last,email,phone,project_type:type,message:desc,subject:'Consultation Request from '+first+' '+last})
+    .then(r=>r.json())
+    .then(()=>{btn.textContent='Request Sent! ✓';btn.style.background='#16a34a';setTimeout(()=>{closeCM();btn.innerHTML='Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';btn.disabled=false;},2500);})
+    .catch(()=>{btn.textContent='Error – email mbelt@dwellingdesign.net';btn.style.background='#dc2626';setTimeout(()=>{btn.innerHTML='Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';btn.disabled=false;},4000);});
 }
 
 // ── MAGNETIC BUTTONS ─────────────────────────────────────
@@ -771,18 +779,26 @@ S('yr').textContent=new Date().getFullYear();
 // ── JSON-LD SCHEMA ───────────────────────────────────────
 const schema={
   "@context":"https://schema.org",
-  "@type":"LocalBusiness",
+  "@type":["LocalBusiness","ProfessionalService"],
   "@id":"https://solarsr3213.github.io/dwellingdesign-v2/",
   "name":"Dwelling Design",
-  "description":"AIBD Certified Professional Building Designer offering custom home design, ADU design, remodels, site planning, and photorealistic renderings in Boise, McCall, and Treasure Valley, Idaho.",
+  "description":"AIBD Certified Professional Building Designer with 25+ years experience offering custom home design, mountain modern architecture, ADU design, remodels, site planning, and photorealistic renderings in Boise, McCall, and Treasure Valley, Idaho.",
   "url":"https://solarsr3213.github.io/dwellingdesign-v2/",
   "email":"mbelt@dwellingdesign.net",
+  "telephone":"+1-208-631-1362",
   "address":{"@type":"PostalAddress","addressLocality":"Boise","addressRegion":"ID","addressCountry":"US"},
-  "areaServed":["Boise, Idaho","McCall, Idaho","Treasure Valley, Idaho","Idaho"],
-  "sameAs":["https://www.facebook.com/profile.php?id=61577562383035","http://linkedin.com/company/dwelling-design-llc"],
+  "areaServed":[
+    {"@type":"City","name":"Boise","addressRegion":"ID"},
+    {"@type":"City","name":"McCall","addressRegion":"ID"},
+    {"@type":"AdministrativeArea","name":"Treasure Valley, Idaho"},
+    {"@type":"State","name":"Idaho"}
+  ],
+  "sameAs":["https://www.facebook.com/profile.php?id=61577562383035","http://linkedin.com/company/dwelling-design-llc","http://www.dwellingdesign.net"],
   "hasCredential":"AIBD Certified Professional Building Designer",
   "image":"https://solarsr3213.github.io/dwellingdesign-v2/images/wmr3.jpg",
-  "priceRange":"$$$$"
+  "priceRange":"$$$$",
+  "knowsAbout":["Custom Home Design","Mountain Modern Architecture","ADU Design","Home Remodel","Site Planning","Architectural Renderings","Construction Management"],
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"4","bestRating":"5"}
 };
 const sd=document.createElement('script');sd.type='application/ld+json';sd.textContent=JSON.stringify(schema);document.head.appendChild(sd);
 

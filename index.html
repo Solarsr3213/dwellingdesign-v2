@@ -550,7 +550,7 @@ footer{background:#080d15;padding:60px 48px 28px;border-top:1px solid var(--glas
 <!-- Gallery Modal -->
 <div id="gm">
   <div class="gm-hdr"><div><div class="gm-proj" id="gm-proj"></div><div class="gm-loc" id="gm-loc"></div></div><button class="gm-x" onclick="closeGM()">✕</button></div>
-  <div class="gm-body"><div class="gm-main" id="gm-main"><img id="gm-img" src="" alt=""><div class="gm-nav"><button onclick="gmNav(-1)">‹</button><button onclick="gmNav(1)">›</button></div></div><div class="gm-thumbs" id="gm-thumbs"></div></div>
+  <div class="gm-body"><div class="gm-main" id="gm-main"><img id="gm-img" src="" alt=""><div class="gm-nav"><button tabindex="-1" onmousedown="event.preventDefault()" onclick="gmNav(-1)">‹</button><button tabindex="-1" onmousedown="event.preventDefault()" onclick="gmNav(1)">›</button></div></div><div class="gm-thumbs" id="gm-thumbs"></div></div>
   <div class="gm-cap" id="gm-cap"></div>
 </div>
 
@@ -717,7 +717,7 @@ function renderGM(){
 }
 function gmNav(d){const p=PROJECTS[ap];aph=((aph+d)+p.photos.length)%p.photos.length;renderGM();}
 document.addEventListener('keydown',e=>{
-  if(S('gm').classList.contains('open')){if(e.key==='ArrowRight')gmNav(1);if(e.key==='ArrowLeft')gmNav(-1);if(e.key==='Escape')closeGM();}
+  if(S('gm').classList.contains('open')){if(e.key==='ArrowRight'){e.preventDefault();gmNav(1);}if(e.key==='ArrowLeft'){e.preventDefault();gmNav(-1);}if(e.key==='Escape')closeGM();}
   if(S('cm').classList.contains('open')&&e.key==='Escape')closeCM();
 });
 

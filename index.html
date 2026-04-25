@@ -726,13 +726,12 @@ function closeCM(){S('cm').classList.remove('open');document.body.style.overflow
 S('cm').addEventListener('click',e=>{if(e.target===S('cm'))closeCM();});
 
 // ── FORMS ────────────────────────────────────────────────
-const FORMSUBMIT_URL='https://formsubmit.co/ajax/mbelt@dwellingdesign.net';
+// Uses Google Apps Script web app (authorized under cbelt202@gmail.com) via image-ping.
+// Image-ping bypasses CORS entirely — the GET fires, GAS runs, MailApp sends the email.
+// Confirmed working: direct URL returns {"success":true} and shows in execution log.
+const GAS_URL='https://script.google.com/macros/s/AKfycbzFGXJNYjtryGLsLcYnlEX-wreg-z8pLccwxHF-bXIsY7RpcIgNUkNACFk53hAQqkGL/exec';
 function _sendEmail(payload){
-  return fetch(FORMSUBMIT_URL,{
-    method:'POST',
-    headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:JSON.stringify({...payload,_subject:payload.subject,_captcha:'false'})
-  });
+  new Image().src=GAS_URL+'?'+new URLSearchParams(payload)+'&t='+Date.now();
 }
 function submitForm(btn){
   const sec=btn.closest('.c-form')||btn.closest('section');
@@ -741,11 +740,9 @@ function submitForm(btn){
   const email=inputs[2]?.value||'';const phone=inputs[3]?.value||'';
   const type=inputs[4]?.value||'';const desc=inputs[5]?.value||'';
   if(!first||!email){btn.textContent='Fill in name & email first';btn.style.background='#dc2626';setTimeout(()=>{btn.innerHTML='Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},2500);return;}
-  btn.textContent='Sending…';btn.disabled=true;
-  _sendEmail({name:first+' '+last,email,phone,project_type:type,message:desc,subject:'New Message from '+first+' '+last})
-    .then(r=>r.json())
-    .then(()=>{btn.textContent='Message Sent! ✓';btn.style.background='#16a34a';setTimeout(()=>{btn.innerHTML='Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';btn.disabled=false;},3000);})
-    .catch(()=>{btn.textContent='Error – email mbelt@dwellingdesign.net';btn.style.background='#dc2626';setTimeout(()=>{btn.innerHTML='Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';btn.disabled=false;},4000);});
+  _sendEmail({name:first+' '+last,email,phone,project_type:type,description:desc,subject:'New Message from '+first+' '+last});
+  btn.textContent='Message Sent! ✓';btn.style.background='#16a34a';
+  setTimeout(()=>{btn.innerHTML='Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},3000);
 }
 function submitConsult(btn){
   const box=btn.closest('.cm-box');
@@ -754,11 +751,9 @@ function submitConsult(btn){
   const email=inputs[2]?.value||'';const phone=inputs[3]?.value||'';
   const type=inputs[4]?.value||'';const desc=inputs[5]?.value||'';
   if(!first||!email){btn.textContent='Fill in name & email first';btn.style.background='#dc2626';setTimeout(()=>{btn.innerHTML='Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},2500);return;}
-  btn.textContent='Sending…';btn.disabled=true;
-  _sendEmail({name:first+' '+last,email,phone,project_type:type,message:desc,subject:'Consultation Request from '+first+' '+last})
-    .then(r=>r.json())
-    .then(()=>{btn.textContent='Request Sent! ✓';btn.style.background='#16a34a';setTimeout(()=>{closeCM();btn.innerHTML='Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';btn.disabled=false;},2500);})
-    .catch(()=>{btn.textContent='Error – email mbelt@dwellingdesign.net';btn.style.background='#dc2626';setTimeout(()=>{btn.innerHTML='Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';btn.disabled=false;},4000);});
+  _sendEmail({name:first+' '+last,email,phone,project_type:type,description:desc,subject:'Consultation Request from '+first+' '+last});
+  btn.textContent='Request Sent! ✓';btn.style.background='#16a34a';
+  setTimeout(()=>{closeCM();btn.innerHTML='Request Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';btn.style.background='';},2500);
 }
 
 // ── MAGNETIC BUTTONS ─────────────────────────────────────

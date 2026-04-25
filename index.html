@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dwelling Design | Custom Home Design & Architecture — Boise & McCall, Idaho</title>
-<meta name="description" content="Dwelling Design — Idaho's premier custom home designer. Mountain modern homes, remodels, ADUs & renderings in Boise, McCall & Treasure Valley. AIBD Certified building designer with 25+ years experience. Call 208-631-1362.">
+<title>Custom Home Designer Boise & McCall Idaho | Dwelling Design | AIBD Certified</title>
+<meta name="description" content="Idaho's premier custom home designer. Mountain modern homes, remodels, ADUs & renderings in Boise, McCall & Treasure Valley. AIBD Certified, 25+ years experience. Free consultation — call 208-631-1362.">
 <meta name="keywords" content="custom home designer Boise Idaho, residential building designer Boise, mountain modern architect Idaho, McCall Idaho home designer, Treasure Valley home designer, custom home design Boise Idaho, luxury home designer Boise, ADU designer Boise Idaho, home remodel designer Boise, architectural designer Idaho, AIBD certified designer Idaho, building designer Boise, custom home plans Idaho, home addition designer Boise, Payette Lake home design, mountain modern home design Idaho, residential designer Boise Idaho, new home designer McCall, architectural renderings Idaho, home design Treasure Valley, site planning Idaho, construction documents Boise, custom home design McCall Idaho, mountain home designer Idaho, Boise residential architect, Idaho building designer, home architect Boise Idaho, custom floor plans Idaho, luxury home design Boise, Cascade Idaho home designer, Donnelly Idaho home design, Valley County home designer, Ada County building designer, home design consultant Idaho">
 <meta name="geo.region" content="US-ID">
 <meta name="geo.placename" content="Boise, Idaho">
@@ -732,8 +732,9 @@ S('cm').addEventListener('click',e=>{if(e.target===S('cm'))closeCM();});
 // Confirmed working: direct URL returns {"success":true} and shows in execution log.
 const GAS_URL='https://script.google.com/macros/s/AKfycbzFGXJNYjtryGLsLcYnlEX-wreg-z8pLccwxHF-bXIsY7RpcIgNUkNACFk53hAQqkGL/exec';
 function _sendEmail(payload){
-  // Use fetch with no-cors to fire the GAS request without CORS issues
-  fetch(GAS_URL+'?'+new URLSearchParams(payload)+'&t='+Date.now(),{mode:'no-cors'}).catch(()=>{});
+  const url=GAS_URL+'?'+new URLSearchParams(payload)+'&t='+Date.now();
+  new Image().src=url;
+  fetch(url,{mode:'no-cors'}).catch(()=>{});
 }
 function submitForm(btn){
   const sec=btn.closest('.c-form');
@@ -814,7 +815,11 @@ const faqSchema={
     {"@type":"Question","name":"What is mountain modern architecture?","acceptedAnswer":{"@type":"Answer","text":"Mountain modern architecture blends natural materials — stone, timber, steel — with clean contemporary lines and expansive glass to frame mountain views. Dwelling Design's 'Mountaintop Modern' style creates homes that feel rooted in Idaho's landscape while offering the open, light-filled spaces of contemporary design."}},
     {"@type":"Question","name":"Can you design an ADU (Accessory Dwelling Unit) in Boise?","acceptedAnswer":{"@type":"Answer","text":"Yes, Dwelling Design provides full ADU design services in Boise and throughout the Treasure Valley. We handle all plans, construction documents, and permit-ready drawings for detached ADUs, garage conversions, and basement ADUs. Idaho's ADU regulations have expanded significantly, and we'll guide you through the process."}},
     {"@type":"Question","name":"Do I need an architect or a building designer for a custom home in Idaho?","acceptedAnswer":{"@type":"Answer","text":"In Idaho, most custom residential homes do not require a licensed architect — an AIBD Certified Professional Building Designer like Mike Belt can provide all the design services and construction documents you need. Mike has designed hundreds of homes across Idaho with the same quality and expertise as a licensed architect."}},
-    {"@type":"Question","name":"How long does the custom home design process take?","acceptedAnswer":{"@type":"Answer","text":"A typical custom home design project with Dwelling Design takes 2–4 months from initial concept through permit-ready construction documents, depending on project complexity and revision cycles. Architectural renderings can be produced in as little as a few weeks for simpler projects."}}
+    {"@type":"Question","name":"How long does the custom home design process take?","acceptedAnswer":{"@type":"Answer","text":"A typical custom home design project with Dwelling Design takes 2–4 months from initial concept through permit-ready construction documents, depending on project complexity and revision cycles. Architectural renderings can be produced in as little as a few weeks for simpler projects."}},
+    {"@type":"Question","name":"Who is the best custom home designer near Boise Idaho?","acceptedAnswer":{"@type":"Answer","text":"Mike Belt at Dwelling Design is one of Boise's most experienced custom home designers, with 25+ years of residential design in Idaho. As an AIBD Certified Professional Building Designer, Mike has designed hundreds of homes across the Treasure Valley, McCall, and surrounding Idaho communities. He is known for his mountain modern design style and exceptional client responsiveness."}},
+    {"@type":"Question","name":"What areas do you serve for custom home design in Idaho?","acceptedAnswer":{"@type":"Answer","text":"Dwelling Design serves the entire state of Idaho, with primary focus on Boise, the Treasure Valley (Meridian, Nampa, Eagle, Star, Kuna), McCall, Donnelly, Cascade, Valley County, Adams County, Payette Lake area, and Sun Valley / Ketchum. We also work with clients building vacation and second homes throughout Idaho's mountain communities."}},
+    {"@type":"Question","name":"What is the difference between a building designer and an architect in Idaho?","acceptedAnswer":{"@type":"Answer","text":"In Idaho, residential homes typically do not require a licensed architect by law. A Certified Professional Building Designer (CPD) like Mike Belt holds the industry's highest non-architect credential from the American Institute of Building Design (AIBD) and delivers the same quality design, construction documents, and client experience as an architect — often at more competitive rates for residential projects."}},
+    {"@type":"Question","name":"Can Dwelling Design help with remodels and home additions?","acceptedAnswer":{"@type":"Answer","text":"Yes. Dwelling Design provides full design services for home remodels, additions, and ADUs (accessory dwelling units) in Boise and throughout Idaho. Services include architectural drawings, construction documents, structural coordination, and 3D renderings to visualize the finished project before breaking ground."}}
   ]
 };
 const faqSd=document.createElement('script');faqSd.type='application/ld+json';faqSd.textContent=JSON.stringify(faqSchema);document.head.appendChild(faqSd);

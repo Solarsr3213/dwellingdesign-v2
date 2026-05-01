@@ -61,21 +61,22 @@
 
 <style>
 :root {
-  --navy: #111827;
-  --navy-light: #1e2d42;
+  --navy: #1c2942;
+  --navy-light: #2a3a55;
   --orange: #E07428;
   --orange-light: #f08840;
   --cream: #f5f0e8;
   --cream-light: #faf8f4;
   --text: #1a1a2e;
-  --glass: rgba(255,255,255,0.05);
-  --glass-border: rgba(255,255,255,0.1);
+  --glass: rgba(255,255,255,0.07);
+  --glass-border: rgba(255,255,255,0.13);
   --spring: cubic-bezier(0.34,1.56,0.64,1);
   --ease: cubic-bezier(0.4,0,0.2,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:auto}
 body{font-family:'Outfit',sans-serif;background:var(--navy);color:#fff;overflow-x:hidden}
+.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 
 #preloader{display:none}
@@ -102,7 +103,8 @@ nav.sc{background:rgba(17,24,39,.9);backdrop-filter:blur(20px);padding:14px 48px
 .hero-slides{position:absolute;inset:0;z-index:1}
 .hs{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.4s ease}
 .hs.on{opacity:1}
-.hero-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(135deg,rgba(17,24,39,.88) 0%,rgba(17,24,39,.45) 55%,rgba(17,24,39,.18) 100%)}
+.hero-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(135deg,rgba(17,24,39,.62) 0%,rgba(17,24,39,.22) 55%,rgba(17,24,39,.05) 100%)}
+.hs{filter:brightness(1.08) saturate(1.05)}
 #ptcl{position:absolute;inset:0;z-index:3;width:100%;height:100%;pointer-events:none}
 .hc{position:relative;z-index:4;max-width:1400px;margin:0 auto;padding:0 48px;width:100%}
 .h-tag{display:inline-flex;align-items:center;gap:10px;font-size:.68rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--orange);margin-bottom:28px}
@@ -144,7 +146,7 @@ nav.sc{background:rgba(17,24,39,.9);backdrop-filter:blur(20px);padding:14px 48px
 .about-in{max-width:1400px;margin:0 auto;padding:110px 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .aimg{position:relative}
 .aimg-frame{position:relative;overflow:hidden}
-.aimg-frame img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transform:scale(1.05);transition:transform .8s}
+.aimg-frame img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transform:scale(1.05);transition:transform .8s;filter:brightness(1.06) saturate(1.04)}
 .aimg-frame:hover img{transform:scale(1)}
 .aimg-acc{position:absolute;bottom:-22px;right:-22px;width:140px;height:140px;border:2px solid var(--orange);z-index:-1}
 .aimg-stat{position:absolute;bottom:28px;left:-28px;background:var(--navy);color:#fff;padding:18px 22px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)}
@@ -201,10 +203,10 @@ nav.sc{background:rgba(17,24,39,.9);backdrop-filter:blur(20px);padding:14px 48px
 .port-grid{max-width:1400px;margin:44px auto 0;padding:0 48px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .pc{position:relative;overflow:hidden;cursor:pointer;background:var(--navy-light);transition:box-shadow .4s;transform-style:preserve-3d}
 .pc.tall{grid-row:span 2}
-.pc-img{width:100%;height:100%;min-height:300px;object-fit:cover;display:block;transition:transform .7s var(--ease),filter .4s}
+.pc-img{width:100%;height:100%;min-height:300px;object-fit:cover;display:block;transition:transform .7s var(--ease),filter .4s;filter:brightness(1.06) saturate(1.04)}
 .pc.tall .pc-img{min-height:380px}
-.pc-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(17,24,39,.95) 0%,rgba(17,24,39,.3) 50%,transparent 100%);opacity:0;transition:opacity .4s;display:flex;flex-direction:column;justify-content:flex-end;padding:28px}
-.pc:hover .pc-img{transform:scale(1.06);filter:brightness(.82)}
+.pc-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(17,24,39,.78) 0%,rgba(17,24,39,.18) 50%,transparent 100%);opacity:0;transition:opacity .4s;display:flex;flex-direction:column;justify-content:flex-end;padding:28px}
+.pc:hover .pc-img{transform:scale(1.06);filter:brightness(1.02) saturate(1.06)}
 .pc:hover .pc-ov{opacity:1}
 .pc:hover{box-shadow:0 30px 80px rgba(0,0,0,.5)}
 .pc-tag{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
@@ -370,7 +372,7 @@ footer{background:#080d15;padding:60px 48px 28px;border-top:1px solid var(--glas
   <canvas id="ptcl"></canvas>
   <div class="hc">
     <div class="h-tag" id="htag">Custom Home Designer — Boise &amp; McCall, Idaho</div>
-    <h1 class="h-h1" id="hh1">Design <em>Made Real</em></h1>
+    <h1 class="h-h1" id="hh1"><span class="vh">Custom Home Designer in Boise &amp; McCall, Idaho — </span>Design <em>Made Real</em></h1>
     <p class="h-sub" id="hsub">Custom home design in Boise, McCall, and throughout Idaho — from initial concept through permit-ready construction documents. AIBD Certified, 25+ years of proven expertise.</p>
     <div class="h-acts" id="hacts">
       <a href="#portfolio" class="btn-p mag">
@@ -949,13 +951,25 @@ S('yr').textContent=new Date().getFullYear();
 const schema={
   "@context":"https://schema.org",
   "@type":["LocalBusiness","ProfessionalService","HomeAndConstructionBusiness"],
-  "@id":"https://www.dwellingdesign.net/",
+  "@id":"https://solarsr3213.github.io/dwellingdesign-v2/",
   "name":"Dwelling Design",
+  "alternateName":["Dwelling Design LLC","Mike Belt — Dwelling Design"],
   "description":"AIBD Certified Professional Building Designer with 25+ years experience offering custom home design, mountain modern architecture, ADU design, remodels, site planning, and photorealistic renderings in Boise, McCall, and Treasure Valley, Idaho.",
-  "url":"https://www.dwellingdesign.net/",
+  "url":"https://solarsr3213.github.io/dwellingdesign-v2/",
   "email":"mbelt@dwellingdesign.net",
   "telephone":"+1-208-631-1362",
   "address":{"@type":"PostalAddress","addressLocality":"Boise","addressRegion":"ID","addressCountry":"US"},
+  "geo":{"@type":"GeoCoordinates","latitude":43.6150,"longitude":-116.2023},
+  "founder":{"@type":"Person","name":"Mike Belt","jobTitle":"AIBD Certified Professional Building Designer","telephone":"+1-208-631-1362","email":"mbelt@dwellingdesign.net","worksFor":{"@type":"Organization","name":"Dwelling Design"},"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"professional certification","name":"AIBD Certified Professional Building Designer"}},
+  "slogan":"Mountain Modern Custom Homes — Designed for Idaho",
+  "makesOffer":[
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Custom Home Design","areaServed":"Idaho"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Mountain Modern Home Design","areaServed":"McCall, Idaho"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"ADU Design","areaServed":"Boise, Idaho"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Home Remodel & Addition Design","areaServed":"Treasure Valley, Idaho"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Architectural Renderings","areaServed":"Idaho"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Site Planning","areaServed":"Idaho"}}
+  ],
   "areaServed":[
     {"@type":"City","name":"Boise","addressRegion":"ID"},
     {"@type":"City","name":"Meridian","addressRegion":"ID"},
@@ -977,10 +991,10 @@ const schema={
   "openingHoursSpecification":[
     {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"}
   ],
-  "sameAs":["https://www.facebook.com/profile.php?id=61577562383035","http://linkedin.com/company/dwelling-design-llc","http://www.dwellingdesign.net"],
+  "sameAs":["https://www.facebook.com/profile.php?id=61577562383035","https://www.linkedin.com/company/dwelling-design-llc","https://www.dwellingdesign.net"],
   "hasCredential":"AIBD Certified Professional Building Designer",
   "foundingDate":"2000",
-  "image":"https://www.dwellingdesign.net/images/wmr3.jpg",
+  "image":"https://solarsr3213.github.io/dwellingdesign-v2/images/wmr3.jpg","logo":"https://solarsr3213.github.io/dwellingdesign-v2/images/logo-color.png",
   "priceRange":"$$$$",
   "knowsAbout":["Custom Home Design","Mountain Modern Architecture","ADU Design","Home Remodel","Site Planning","Architectural Renderings","Construction Management","Residential Building Design","Home Addition Design","Payette Lake Home Design","McCall Idaho Home Design","Boise Custom Home Design","Treasure Valley Home Design","Mountain Modern Home Plans"],
   "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"4","bestRating":"5"},

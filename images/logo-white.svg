@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Dwelling Design">
+  <text x="0" y="120" font-family="'Outfit','Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="100" letter-spacing="-2" fill="#ffffff">DWELLING</text>
+  <path fill="#E07428" d="
+    M 600 120
+    L 660 35
+    L 678 12
+    L 692 22
+    L 672 47
+    L 740 120
+    L 722 120
+    L 666 47
+    L 618 120
+    Z"/>
+  <text x="280" y="178" font-family="'Outfit','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="34" letter-spacing="14" fill="#E07428">DESIGN</text>
+</svg>

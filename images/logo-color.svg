@@ -1,20 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Dwelling Design">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="55 0 250 100" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Dwelling Design">
   <!-- DWELLING wordmark -->
-  <text x="0" y="120" font-family="'Outfit','Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="100" letter-spacing="-2" fill="#1c2942">DWELLING</text>
+  <text x="61.61" y="73.01" font-family="'Outfit','Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="30" letter-spacing="-0.5" fill="#2A3A55">DWELLING</text>
 
-  <!-- Asymmetric chevron / roof mark -->
-  <path fill="#E07428" d="
-    M 600 120
-    L 660 35
-    L 678 12
-    L 692 22
-    L 672 47
-    L 740 120
-    L 722 120
-    L 666 47
-    L 618 120
-    Z"/>
+  <!-- Chevron / roof mark (geometry from official 2026 brand PDF) -->
+  <path fill="#E07428" d="M 195.31 45.06 L 234.75 5.63 L 302.79 73.66 L 285.27 73.66 L 234.57 22.97 L 212.44 45.10 Z"/>
 
   <!-- DESIGN subtitle -->
-  <text x="280" y="178" font-family="'Outfit','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="34" letter-spacing="14" fill="#E07428">DESIGN</text>
+  <text x="193.38" y="93.12" font-family="'Outfit','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="18.5" letter-spacing="6.5" fill="#E07428">DESIGN</text>
 </svg>
